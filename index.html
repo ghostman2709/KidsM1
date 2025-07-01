@@ -1,143 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hiperfoco – Links Úteis</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #001122, #002244);
-      color: #66ccff;
-      text-align: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-      animation: fadeIn 1.5s ease-in-out forwards;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hyper Foco - Módulo 1: O Que é o Dinheiro?</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  :root {
+    --bg-color: #121212;
+    --text-color: #E0E0E0;
+    --accent-color: #FF6F61;
+    --accent-color-light: #FF8A80;
+    --font-family: 'Montserrat', sans-serif;
+  }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #1E1E1E;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(255,111,97,0.25);
+  }
+
+  h1 {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  h2 {
+    color: var(--accent-color-light);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 20px;
+    font-style: italic;
+    color: var(--accent-color-light);
+    margin: 25px 0;
+    font-size: 1.2rem;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .reflection {
+    background-color: #282828;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    font-weight: 600;
+  }
+
+  /* Imagens estilizadas */
+  .illustration {
+    width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 15px 0 25px 0;
+    box-shadow: 0 4px 12px rgba(255,111,97,0.3);
+  }
+
+  @media (max-width: 480px) {
+    main {
+      padding: 20px;
     }
 
     h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #66ccff;
-      text-shadow: 0 0 10px #3399ff;
+      font-size: 1.8rem;
     }
 
-    .desc {
-      font-size: 16px;
-      margin-bottom: 25px;
-      color: #aaccee;
+    h2 {
+      font-size: 1.4rem;
     }
 
-    .link {
-      display: block;
-      background: rgba(102, 204, 255, 0.08);
-      color: #66ccff;
-      padding: 14px 22px;
-      margin: 16px 0;
-      text-decoration: none;
-      border: 2px solid #66ccff;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 18px;
-      backdrop-filter: blur(5px);
-      transition: all 0.3s ease;
+    p, blockquote {
+      font-size: 1rem;
     }
-
-    .link:hover {
-      background: #66ccff;
-      color: #001122;
-      transform: scale(1.05);
-    }
-
-    .btn-audio {
-      margin: 20px auto 40px auto;
-      padding: 14px 30px;
-      font-size: 17px;
-      font-weight: bold;
-      color: #001122;
-      background-color: #66ccff;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .btn-audio:hover {
-      background-color: #3399ff;
-      transform: scale(1.05);
-    }
-
-    .section-title {
-      margin-top: 40px;
-      font-size: 22px;
-      color: #88ddff;
-      text-shadow: 0 0 8px #2277cc;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #88aabb;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hiperfoco</h1>
-    <p class="desc">Acesse os principais projetos, livros e cursos criados para seu crescimento pessoal, digital e financeiro.</p>
+  <main>
+    <h1>Módulo 1 – O Que é o Dinheiro?</h1>
 
-    <button class="btn-audio" id="btnAudio">🎧 Ativar Áudio Binaural</button>
+    <h2>História: Joãozinho e a Moeda Perdida</h2>
+    <img src="https://cdn.pixabay.com/photo/2017/03/06/22/39/coin-2122519_1280.png" alt="Moeda dourada" class="illustration" />
+    <p>Joãozinho encontrou uma moeda dourada no caminho da escola. Ela brilhava como o sol e parecia mágica! Ele ficou tão feliz que correu para mostrar ao avô. O vovô explicou:</p>
+    <p><em>— Joãozinho, o dinheiro é como essa moeda: só tem valor quando sabemos usá-lo com sabedoria.</em></p>
+    <p>— Mas para que serve o dinheiro? — perguntou João.</p>
+    <p><em>— Para comprar coisas que precisamos, guardar para o futuro, ou até ajudar outras pessoas. O dinheiro é uma ferramenta, não um brinquedo.</em></p>
 
-    <a class="link" href="https://ghostman2709.github.io/Index/" target="_blank">📘 Livro Hiperfoco – O Poder de 10 Minutos por Dia</a>
-    <a class="link" href="https://ghostman2709.github.io/IA/" target="_blank">🤖 Curso Mestre em Inteligência Artificial</a>
-    <a class="link" href="https://wa.me/5555996043937?text=Olá,%20quero%20acesso%20e%20suporte%20do%20Hiperfoco%20e%20IA" target="_blank">💬 Suporte e Pagamentos via WhatsApp</a>
+    <h2>Explicação</h2>
+    <img src="https://cdn.pixabay.com/photo/2017/03/01/21/50/money-2108022_1280.png" alt="Dinheiro e planejamento" class="illustration" />
+    <p>O dinheiro é um meio para trocar coisas, guardar para um momento especial e construir sonhos. Ele não é mágico, mas pode ajudar a realizar coisas incríveis quando usado com cuidado.</p>
 
-    <h2 class="section-title">📗 Ebook: Prepare Seu Filho Para o Futuro</h2>
-    <a class="link" href="https://ghostman2709.github.io/filho-futuro/" target="_blank">
-      👨‍👩‍👧 Dicas práticas para educação emocional, financeira e digital
-    </a>
+    <h2>Frase de Impacto</h2>
+    <blockquote>“O dinheiro é um bom servo, mas um péssimo mestre.” — Francis Bacon</blockquote>
 
-    <h2 class="section-title">💡 Projeto BTC: Money in Your Head</h2>
-    <a class="link" href="https://ghostman2709.github.io/btc-memoria/" target="_blank">
-      🧠 Memorize 12 palavras e controle seus investimentos com segurança e inteligência
-    </a>
-  </div>
-
-  <audio id="audioBinaural" src="binaural.mp3" loop preload="auto"></audio>
+    <h2>Reflexão</h2>
+    <img src="https://cdn.pixabay.com/photo/2017/08/06/22/54/thinking-2594682_1280.png" alt="Criança pensando" class="illustration" />
+    <div class="reflection">
+      Se você tivesse uma moeda mágica, o que escolheria fazer com ela: gastar, guardar ou doar? Por quê?
+    </div>
+  </main>
 
   <footer>
-    © 2025 Projeto Hiperfoco – Criado por Érico Mendieta
+    Hyper Foco &copy; 2025 — Dinheiro, Sonhos e Inteligência com Amor
   </footer>
-
-  <script>
-    const btnAudio = document.getElementById('btnAudio');
-    const audio = document.getElementById('audioBinaural');
-    let isPlaying = false;
-
-    btnAudio.addEventListener('click', () => {
-      if (!isPlaying) {
-        audio.play();
-        btnAudio.textContent = '⏸️ Parar Áudio Binaural';
-        isPlaying = true;
-      } else {
-        audio.pause();
-        btnAudio.textContent = '🎧 Ativar Áudio Binaural';
-        isPlaying = false;
-      }
-    });
-  </script>
 </body>
 </html>
