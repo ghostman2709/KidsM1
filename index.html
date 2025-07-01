@@ -5,96 +5,133 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dinheiro e Sonhos - Capítulos 1 a 4</title>
 <style>
+  /* Fonte moderna e legível */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
   body {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    background: #fff8dc;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8; /* azul clarinho de fundo */
+    color: #2c3e50; /* azul escuro para texto */
     margin: 0; padding: 0;
   }
   header {
-    background-color: #f7b733;
-    padding: 20px;
+    background-color: #1e88e5; /* azul médio Hyper Foco */
+    padding: 25px 20px;
     text-align: center;
-    color: #5a2a00;
-    border-bottom: 4px solid #e67e22;
+    color: #e3f2fd; /* azul claro para o texto do header */
+    border-bottom: 5px solid #1565c0; /* azul mais escuro */
+    box-shadow: 0 3px 6px rgba(30,136,229,0.3);
   }
   header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: 700;
+    letter-spacing: 1.2px;
   }
   nav {
-    margin: 20px 0;
-    text-align: center;
+    margin-top: 15px;
   }
   nav a {
-    color: #e67e22;
+    color: #bbdefb; /* azul claro */
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: 700;
-    font-size: 1.2em;
+    margin: 0 18px;
+    font-weight: 600;
+    font-size: 1.3em;
+    transition: color 0.3s ease;
   }
   nav a:hover {
+    color: #e3f2fd; /* azul mais claro */
     text-decoration: underline;
   }
   main {
-    max-width: 700px;
-    margin: 0 auto 50px;
-    padding: 20px;
-    background-color: #fff3e0;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #f4a261;
+    max-width: 760px;
+    margin: 40px auto 60px;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(30, 136, 229, 0.15);
   }
   section {
-    margin-bottom: 50px;
-    border-left: 6px solid #e67e22;
-    padding-left: 20px;
-    background: #fff8e1;
-    border-radius: 8px;
+    margin-bottom: 55px;
+    border-left: 8px solid #1e88e5; /* barra azul lateral */
+    padding-left: 28px;
+    background: #e8f0fe; /* azul muito claro */
+    border-radius: 10px;
   }
   h2 {
-    color: #d35400;
+    color: #1565c0; /* azul escuro */
     font-weight: 700;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #e67e22;
-    padding-bottom: 7px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #1e88e5;
+    padding-bottom: 10px;
+    font-size: 1.8em;
   }
   .frase-impacto {
     font-style: italic;
-    color: #b35400;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-    padding-left: 15px;
-    border-left: 5px solid #d35400;
-    background: #ffecb3;
-    border-radius: 6px;
+    color: #0d47a1; /* azul bem escuro */
+    margin-bottom: 18px;
+    font-size: 1.25em;
+    padding-left: 20px;
+    border-left: 6px solid #1565c0;
+    background: #bbdefb;
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px rgba(21,101,192,0.2);
   }
   .historia {
     font-weight: 600;
-    margin-bottom: 12px;
-    font-size: 1.1em;
-    line-height: 1.5;
+    margin-bottom: 16px;
+    font-size: 1.15em;
+    line-height: 1.6;
+    color: #1a237e;
   }
   p {
-    line-height: 1.5;
-    font-size: 1.1em;
-    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1.13em;
+    margin-bottom: 18px;
+    color: #2c3e50;
   }
   .reflexao {
     font-weight: 700;
-    background: #ffe0b2;
-    padding: 12px;
-    border-radius: 6px;
-    color: #9a5500;
+    background: #d0e3fc;
+    padding: 16px 20px;
+    border-radius: 10px;
+    color: #0d47a1;
+    box-shadow: inset 0 0 6px rgba(13,71,161,0.3);
   }
   footer {
-    background-color: #f7b733;
+    background-color: #1565c0;
     text-align: center;
-    padding: 20px;
-    color: #5a2a00;
-    font-weight: 700;
+    padding: 22px 15px;
+    color: #bbdefb;
+    font-weight: 600;
     font-size: 1em;
-    border-top: 4px solid #e67e22;
+    border-top: 5px solid #0d47a1;
+    box-shadow: 0 -3px 10px rgba(21,101,192,0.3);
+  }
+
+  /* Responsividade básica */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2em;
+    }
+    nav a {
+      font-size: 1.1em;
+      margin: 0 10px;
+    }
+    main {
+      margin: 25px 15px 40px;
+      padding: 20px 15px;
+    }
+    section {
+      padding-left: 18px;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+    .frase-impacto {
+      font-size: 1.1em;
+      padding-left: 15px;
+    }
   }
 </style>
 </head>
