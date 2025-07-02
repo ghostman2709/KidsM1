@@ -1,199 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dinheiro e Sonhos - Capítulos 1 a 4</title>
-<style>
-  /* Fonte moderna e legível */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #121417; /* fundo bem escuro, quase preto */
-    color: #cfd8dc; /* texto claro para contraste */
-    margin: 0; padding: 0;
-  }
-  header {
-    background-color: #0d47a1; /* azul escuro forte do Hyper Foco */
-    padding: 25px 20px;
-    text-align: center;
-    color: #bbdefb; /* azul claro para o texto do header */
-    border-bottom: 5px solid #1565c0; /* azul intermediário */
-    box-shadow: 0 3px 6px rgba(13, 71, 161, 0.7);
-  }
-  header h1 {
-    margin: 0;
-    font-size: 2.8em;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-  }
-  nav {
-    margin-top: 15px;
-  }
-  nav a {
-    color: #90caf9; /* azul claro */
-    text-decoration: none;
-    margin: 0 18px;
-    font-weight: 600;
-    font-size: 1.3em;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #e3f2fd; /* azul mais claro */
-    text-decoration: underline;
-  }
-  main {
-    max-width: 760px;
-    margin: 40px auto 60px;
-    padding: 25px 30px;
-    background-color: #1e2a38; /* azul escuro para painel principal */
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(21, 101, 192, 0.6);
-  }
-  section {
-    margin-bottom: 55px;
-    border-left: 8px solid #2196f3; /* barra azul forte */
-    padding-left: 28px;
-    background: #26394a; /* azul bem escuro para o bloco */
-    border-radius: 10px;
-  }
-  h2 {
-    color: #bbdefb; /* azul claro */
-    font-weight: 700;
-    margin-bottom: 18px;
-    border-bottom: 3px solid #2196f3;
-    padding-bottom: 10px;
-    font-size: 1.8em;
-  }
-  .frase-impacto {
-    font-style: italic;
-    color: #90caf9; /* azul claro */
-    margin-bottom: 18px;
-    font-size: 1.25em;
-    padding-left: 20px;
-    border-left: 6px solid #64b5f6;
-    background: #1565c0; /* azul médio escuro */
-    border-radius: 8px;
-    box-shadow: 1px 1px 6px rgba(21, 101, 192, 0.7);
-  }
-  .historia {
-    font-weight: 600;
-    margin-bottom: 16px;
-    font-size: 1.15em;
-    line-height: 1.6;
-    color: #bbdefb;
-  }
-  p {
-    line-height: 1.6;
-    font-size: 1.13em;
-    margin-bottom: 18px;
-    color: #cfd8dc;
-  }
-  .reflexao {
-    font-weight: 700;
-    background: #0d47a1; /* azul bem escuro */
-    padding: 16px 20px;
-    border-radius: 10px;
-    color: #bbdefb;
-    box-shadow: inset 0 0 8px rgba(21, 101, 192, 0.7);
-  }
-  footer {
-    background-color: #1565c0;
-    text-align: center;
-    padding: 22px 15px;
-    color: #bbdefb;
-    font-weight: 600;
-    font-size: 1em;
-    border-top: 5px solid #0d47a1;
-    box-shadow: 0 -3px 10px rgba(21, 101, 192, 0.7);
-  }
-
-  /* Responsividade básica */
-  @media (max-width: 480px) {
-    header h1 {
-      font-size: 2em;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hiperfoco – Acesso e Ofertas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #001122, #002244);
+      color: #66ccff;
+      text-align: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      animation: fadeIn 3s ease-in-out forwards;
     }
-    nav a {
-      font-size: 1.1em;
-      margin: 0 10px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
-    main {
-      margin: 25px 15px 40px;
-      padding: 20px 15px;
+    .container {
+      max-width: 600px;
+      margin: 0 auto 60px auto;
+      padding-bottom: 40px;
+      border-radius: 15px;
+      background: rgba(0,18,34,0.6);
+      box-shadow: 0 0 15px #3399ff;
     }
-    section {
-      padding-left: 18px;
+    h1, h2 {
+      color: #66ccff;
+      text-shadow: 0 0 10px #3399ff;
+    }
+    h1 {
+      font-size: 34px;
+      margin-bottom: 30px;
+      padding-top: 30px;
     }
     h2 {
-      font-size: 1.5em;
+      font-size: 26px;
+      margin-top: 20px;
+      margin-bottom: 15px;
     }
-    .frase-impacto {
-      font-size: 1.1em;
-      padding-left: 15px;
+    .link {
+      display: block;
+      background: rgba(102, 204, 255, 0.1);
+      color: #66ccff;
+      padding: 14px 20px;
+      margin: 15px 30px;
+      text-decoration: none;
+      border: 2px solid #66ccff;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 18px;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
     }
-  }
-</style>
+    .link:hover {
+      background: #66ccff;
+      color: #001122;
+      transform: scale(1.05);
+    }
+    .pix-section {
+      margin: 30px 15px 40px 15px;
+      padding: 20px;
+      background: rgba(102, 204, 255, 0.15);
+      border-radius: 12px;
+      box-shadow: 0 0 10px #3399ff;
+    }
+    .pix-key {
+      font-weight: bold;
+      color: #99ccff;
+      margin-top: 15px;
+      word-break: break-word;
+      font-size: 14px;
+    }
+    .pix-qr {
+      margin: 20px auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px #66ccff;
+      display: block;
+    }
+    #msgCopiado {
+      margin-top: 15px;
+      color: #00ff88;
+      font-weight: 700;
+      display: none;
+    }
+    #btnEnviarComprovante {
+      margin-top: 25px;
+      display: none;
+      background-color: #25d366;
+      color: #fff;
+      padding: 14px 30px;
+      font-weight: 700;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 0 10px #25d366;
+      transition: background-color 0.3s ease;
+    }
+    #btnEnviarComprovante:hover {
+      background-color: #1ebe57;
+    }
+    .section-divider {
+      border-top: 2px solid #3399ff;
+      margin: 40px 0;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Dinheiro e Sonhos</h1>
-  <nav>
-    <a href="#cap1">Capítulo 1</a>
-    <a href="#cap2">Capítulo 2</a>
-    <a href="#cap3">Capítulo 3</a>
-    <a href="#cap4">Capítulo 4</a>
-  </nav>
-</header>
+  <div class="container">
+    <h1>📘 Hiperfoco – Capítulos 1 a 5 Grátis</h1>
+    <!-- Capítulos 1 a 5 -->
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank">Capítulo 1</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank">Capítulo 3</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank">Capítulo 4</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank">Capítulo 5</a>
 
-<main>
-
-  <section id="cap1">
-    <h2>Capítulo 1 - O Valor do Dinheiro</h2>
-    <div class="frase-impacto">“Dinheiro é uma ferramenta para realizar seus sonhos.”</div>
-    <div class="historia">
-      Lucas ganhou sua primeira mesada e não sabia o que fazer com aquele dinheiro. Ele queria comprar brinquedos, doces e videogames. Sua mãe explicou que o dinheiro tem valor e que é importante pensar bem antes de gastar. Lucas aprendeu que guardar um pouco todo mês poderia ajudá-lo a comprar algo realmente especial no futuro.
+    <div class="mensagem-pagamento" style="margin:30px 15px; font-size:18px; font-weight:600; color:#99ccff; text-shadow:0 0 5px #3399ff;">
+      Para liberar os capítulos 6 a 20, faça o pagamento abaixo:
     </div>
-    <p><strong>Explicação:</strong> O dinheiro é um recurso que ajuda a gente a conseguir coisas que queremos. Mas é importante usá-lo com sabedoria, pensando no que realmente vale a pena.</p>
-    <p class="reflexao">Você sabe para que serve o seu dinheiro? Guardar um pouco pode te ajudar a alcançar sonhos maiores.</p>
-  </section>
 
-  <section id="cap2">
-    <h2>Capítulo 2 - Poupar é um Superpoder</h2>
-    <div class="frase-impacto">“Guardar dinheiro é pensar no amanhã.”</div>
-    <div class="historia">
-      A Sofia recebeu uma moeda de ouro de presente. Ela pensou em gastar logo, mas seu avô contou que pessoas que guardam dinheiro podem comprar coisas melhores depois. Sofia começou a guardar moedas em um cofrinho, e com o tempo juntou dinheiro para comprar um livro que ela queria muito.
+    <div class="pix-section" id="pixEbook">
+      <h2>📗 Ebook Completo Hiperfoco — R$19,99</h2>
+      <p>Pagamento via Pix para liberar os capítulos 6 a 20.</p>
+      <img class="pix-qr" src="qrcode-pix-erico.png" alt="QR Code Pix Ebook" />
+      <button onclick="copiarPix('pixPayloadEbook','btnEnviarComprovanteEbook','msgCopiadoEbook')" class="link">📋 Copiar chave Pix</button>
+      <p class="pix-key" id="pixPayloadEbook">
+00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540520.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510LTg727SamC63041D12
+      </p>
+      <p id="msgCopiadoEbook" style="display:none;">✅ Pix copiado! Agora envie seu comprovante:</p>
+      <button id="btnEnviarComprovanteEbook" style="display:none; background-color:#25d366; color:#fff; padding:14px 30px; font-weight:700; border:none; border-radius:15px; cursor:pointer; font-size:18px; box-shadow:0 0 10px #25d366; transition:background-color 0.3s ease;">📤 Enviar comprovante via WhatsApp</button>
     </div>
-    <p><strong>Explicação:</strong> Poupar significa guardar um pouco de dinheiro para usar no futuro, quando algo importante aparecer. Isso ajuda a evitar gastar tudo de uma vez e ter sempre uma reserva.</p>
-    <p class="reflexao">Você já tem um lugar para guardar seu dinheiro? Que tal começar a economizar para um sonho seu?</p>
-  </section>
 
-  <section id="cap3">
-    <h2>Capítulo 3 - Gastar com Sabedoria</h2>
-    <div class="frase-impacto">“Antes de comprar, pergunte-se: eu realmente preciso disso?”</div>
-    <div class="historia">
-      O Pedro queria comprar muitos doces na loja, mas sua irmã mais velha ensinou que é melhor pensar antes de gastar para não acabar sem dinheiro quando precisar. Pedro escolheu comprar só alguns doces e guardou o resto do dinheiro para comprar um brinquedo que queria.
+    <div class="section-divider"></div>
+
+    <div class="pix-section" id="pixCombo">
+      <h2>🔥 Combo Plus: Ebook + Grupo VIP — R$24,99</h2>
+      <p>Inclui ebook completo + acesso ao grupo VIP com áudios, trilhas binaurais e mais de 200 livros em audiobook e PDF grátis.</p>
+      <img class="pix-qr" src="qrcode-pix-comboplus.png" alt="QR Code Pix Combo Plus" />
+      <button onclick="copiarPix('pixPayloadCombo','btnEnviarComprovanteCombo','msgCopiadoCombo')" class="link">📋 Copiar chave Pix</button>
+      <p class="pix-key" id="pixPayloadCombo">
+00020126580014BR.GOV.BCB.PIX0136xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx520400005303986540524995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510COMBOPLUSC6304XXXX
+      </p>
+      <p id="msgCopiadoCombo" style="display:none;">✅ Pix copiado! Agora envie seu comprovante:</p>
+      <button id="btnEnviarComprovanteCombo" style="display:none; background-color:#25d366; color:#fff; padding:14px 30px; font-weight:700; border:none; border-radius:15px; cursor:pointer; font-size:18px; box-shadow:0 0 10px #25d366; transition:background-color 0.3s ease;">📤 Enviar comprovante via WhatsApp</button>
     </div>
-    <p><strong>Explicação:</strong> Gastar com sabedoria é pensar se aquilo que você quer comprar é importante e se vale a pena. Isso ajuda a não desperdiçar dinheiro e a ter sempre o que precisa.</p>
-    <p class="reflexao">Você já pensou antes de gastar seu dinheiro? Saber escolher é um superpoder!</p>
-  </section>
 
-  <section id="cap4">
-    <h2>Capítulo 4 - Sonhe e Planeje</h2>
-    <div class="frase-impacto">“Sonhar é o primeiro passo para realizar.”</div>
-    <div class="historia">
-      A Maria queria muito uma bicicleta nova. Ela começou a guardar parte da mesada e fez um plano para juntar dinheiro todo mês. Mesmo quando parecia difícil, ela continuou economizando e, no final do ano, conseguiu comprar sua bicicleta dos sonhos.
-    </div>
-    <p><strong>Explicação:</strong> Ter sonhos é importante para saber para onde o seu dinheiro deve ir. Planejar como guardar dinheiro ajuda a alcançar esses sonhos, mesmo que leve um tempo.</p>
-    <p class="reflexao">Qual é o seu sonho? Comece a pensar em como você pode economizar para realizá-lo!</p>
-  </section>
+  </div>
 
-</main>
+  <script>
+    function copiarPix(idPayload, idBtn, idMsg) {
+      const payload = document.getElementById(idPayload).innerText.trim();
+      navigator.clipboard.writeText(payload).then(() => {
+        document.getElementById(idMsg).style.display = "block";
+        const btn = document.getElementById(idBtn);
+        btn.style.display = "inline-block";
 
-<footer>
-  &copy; 2025 Dinheiro e Sonhos | Desenvolvido por Érico Mendieta
-</footer>
-
+        const telefone = "5555996043937";
+        const texto = encodeURIComponent("Olá! Já realizei o pagamento via Pix. Segue o comprovante.");
+        btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${texto}`, "_blank");
+      }).catch(() => {
+        alert("Erro ao copiar a chave Pix.");
+      });
+    }
+  </script>
 </body>
-  </html>
+</html>
