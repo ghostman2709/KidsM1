@@ -18,7 +18,7 @@
     }
 
     header {
-      padding: 3rem 1rem 2rem;
+      padding: 2rem 1rem 1rem;
       text-align: center;
     }
 
@@ -33,15 +33,19 @@
     header p {
       font-size: 1.2rem;
       color: #99ccff;
-      margin-top: 0.5rem;
+      margin-top: 0.2rem;
       text-shadow: 0 0 8px #3399ff99;
       font-weight: 600;
     }
 
     .section {
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.5rem 3rem;
       max-width: 800px;
-      margin: auto;
+      margin: 1rem auto;
+      border: 2px solid #66ccff;
+      border-radius: 16px;
+      background: rgba(0, 17, 34, 0.6);
+      box-shadow: 0 0 30px #66ccff, 0 0 60px #3399ffaa;
     }
 
     .section h2 {
@@ -126,7 +130,7 @@
       text-decoration: none;
       border: 2px solid #66ccff;
       border-radius: 12px;
-      box-shadow: 0 0 10px #3399ff99;
+      box-shadow: 0 0 20px #66ccffcc;
       transition: all 0.3s ease;
       margin-top: 3rem;
     }
@@ -134,7 +138,6 @@
     .access-link:hover {
       background: #66ccff;
       color: #001122;
-      box-shadow: 0 0 20px #66ccffcc;
       transform: scale(1.05);
     }
 
@@ -170,7 +173,7 @@
   <p>O Poder de 10 Minutos por Dia</p>
 </header>
 
-<div class="section">
+<div class="section fade-in">
   <h2 class="fade-in">📘 Transforme sua mente com apenas 10 minutos por dia</h2>
   <p class="fade-in">Este não é apenas um livro. É um método para transformar sua forma de viver, pensar e agir.</p>
   <p class="quote fade-in">“Mude seus pensamentos e mudará sua vida.” — Napoleon Hill</p>
@@ -201,7 +204,7 @@
     </ul>
   </div>
 
-  <a id="acesso" href="https://ghostman2709.github.io/hyperfoco-/" target="_blank" class="access-link fade-in" rel="noopener noreferrer">
+  <a href="https://ghostman2709.github.io/hyperfoco-/" target="_blank" class="access-link fade-in" rel="noopener noreferrer">
     👉 Acesse o conteúdo aqui!
   </a>
 </div>
@@ -230,7 +233,6 @@
 
   // Fade-in animation
   const fadeIns = document.querySelectorAll('.fade-in');
-
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
