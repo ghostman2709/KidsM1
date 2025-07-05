@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <title>Hiperfoco Acesso e Ofertas</title>
+  <title>Hiperfoco Acesso - Capítulos Completos</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
@@ -46,6 +46,7 @@
       border-radius: 16px;
       background: rgba(0, 17, 34, 0.6);
       box-shadow: 0 0 30px #66ccff, 0 0 60px #3399ffaa;
+      text-align: center;
     }
 
     .section h2 {
@@ -73,6 +74,7 @@
       cursor: pointer;
       box-shadow: 0 0 10px #66ccff;
       text-align: center;
+      user-select: none;
     }
 
     .link:hover {
@@ -82,81 +84,8 @@
       box-shadow: 0 0 20px #66ccffcc;
     }
 
-    .pix-section {
-      margin-top: 3rem;
-      padding: 2rem;
-      background: rgba(102, 204, 255, 0.12);
-      border-radius: 16px;
-      box-shadow: 0 0 20px #66ccff88, 0 0 50px #3399ff55;
-    }
-
-    .pix-section h2 {
-      font-size: 1.6rem;
-      color: #66ccff;
-      text-shadow: 0 0 10px #3399ff;
-      font-weight: 700;
-    }
-
-    .pix-section p {
-      color: #99ccff;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .pix-qr {
-      width: 150px;
-      height: 150px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #66ccff;
-      display: block;
-      margin: 20px auto;
-    }
-
-    .pix-key {
-      font-weight: bold;
-      color: #aaccee;
-      margin-top: 15px;
-      font-size: 14px;
-      word-break: break-word;
-      user-select: all;
-      cursor: text;
-      text-align: center;
-    }
-
-    .btn-verde {
-      display: none;
-      background-color: #39ff14;
-      color: #001100;
-      padding: 14px 30px;
-      font-weight: 700;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: 0 0 12px #39ff14, 0 0 25px #39ff14aa;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .btn-verde:hover {
-      background-color: #2ecc00;
-      color: #fff;
-      box-shadow: 0 0 20px #2ecc00;
-    }
-
-    #msgCopiadoEbook, #msgCopiadoCombo {
-      display: none;
-      color: #00ff88;
-      font-weight: 700;
-      margin-top: 15px;
-      text-align: center;
-    }
-
     #audioControl {
-      margin: 1rem auto 2rem;
+      margin: 2rem auto;
       background: rgba(102, 204, 255, 0.1);
       border: 2px solid #66ccff;
       color: #66ccff;
@@ -176,26 +105,6 @@
     #audioControl:hover {
       background: #66ccff;
       color: #001122;
-      transform: scale(1.05);
-    }
-
-    /* Animação de pulso para o botão quando ativo */
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 8px #66ccff88;
-      }
-      50% {
-        box-shadow: 0 0 20px #66ccffcc;
-      }
-      100% {
-        box-shadow: 0 0 8px #66ccff88;
-      }
-    }
-
-    #audioControl.playing {
-      animation: pulseGlow 2s infinite;
-      color: #001122;
-      background: #66ccff;
       transform: scale(1.05);
     }
 
@@ -225,11 +134,9 @@
       .section h2 {
         font-size: 1.4rem;
       }
-      .link, .btn-verde, #audioControl {
+      .link, #audioControl {
         font-size: 1rem;
         padding: 0.8rem 1.2rem;
-      }
-      .btn-verde {
         max-width: 100%;
       }
     }
@@ -243,14 +150,13 @@
 </header>
 
 <div class="section fade-in">
-
-  <p style="color: #99ccff; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 6px #3399ff;">
-    🎧 Ative o áudio para uma melhor experiência
-  </p>
   <button id="audioControl" class="fade-in">Ativar Trilha Sonora 🎧</button>
   <audio id="bgAudio" src="audio.mp3" loop></audio>
 
-  <h2 class="fade-in">📘 Capítulos Gratuitos</h2>
+  <h2>📘 Capítulos Completos</h2>
+
+  <a class="link fade-in" href="https://github.com/ghostman2709/AudioBooks-" target="_blank" rel="noopener noreferrer">🎧 AudioBooks</a>
+
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank" rel="noopener noreferrer">Capítulo 1</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank" rel="noopener noreferrer">Capítulo 2</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank" rel="noopener noreferrer">Capítulo 3</a>
@@ -271,23 +177,41 @@
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-18/" target="_blank" rel="noopener noreferrer">Capítulo 18</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-19/" target="_blank" rel="noopener noreferrer">Capítulo 19</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-20/" target="_blank" rel="noopener noreferrer">Capítulo 20</a>
+</div>
 
-  <div class="pix-section fade-in" id="pixEbook">
-    <h2>📗 Ebook Completo – R$19,99</h2>
-    <p>Pagamento via Pix para liberar capítulos 6 a 20.</p>
-    <img class="pix-qr" src="qrcode-pix-erico.png" alt="QR Code para pagamento Pix do Ebook de R$19,99" />
-    <button onclick="copiarPix('pixPayloadEbook','btnEnviarComprovanteEbook','msgCopiadoEbook')" class="link fade-in" type="button">📋 Copiar chave Pix</button>
-    <p class="pix-key" id="pixPayloadEbook">
-      00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540519.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510Uitd1vwYnc63049A7C
-    </p>
-    <p id="msgCopiadoEbook">✅ Pix copiado! Agora envie seu comprovante:</p>
-    <a id="btnEnviarComprovanteEbook" class="btn-verde" target="_blank" rel="noopener noreferrer">📤 Enviar comprovante via WhatsApp</a>
-  </div>
+<footer class="fade-in">
+  © 2025 Projeto Hiperfoco. Todos os direitos reservados.
+</footer>
 
-  <div class="pix-section fade-in" id="pixCombo">
-    <h2>🔥 Combo Plus – R$24,99</h2>
-    <p>Inclui Ebook completo + Grupo VIP com mais de 200 audiobooks e PDFs.</p>
-    <img class="pix-qr" src="qrcode-pix-comboplus.png" alt="QR Code para pagamento Pix do Combo Plus R$24,99" />
-    <button onclick="copiarPix('pixPayloadCombo','btnEnviarComprovanteCombo','msgCopiadoCombo')" class="link fade-in" type="button">📋 Copiar chave Pix</button>
-    <p class="pix-key" id="pixPayloadCombo">
-      00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540524.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510wZ
+<script>
+  const btnAudio = document.getElementById('audioControl');
+  const audio = document.getElementById('bgAudio');
+  let isPlaying = false;
+
+  btnAudio.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
+      btnAudio.textContent = 'Parar Trilha Sonora ⏸️';
+      isPlaying = true;
+    } else {
+      audio.pause();
+      btnAudio.textContent = 'Ativar Trilha Sonora 🎧';
+      isPlaying = false;
+    }
+  });
+
+  const fadeIns = document.querySelectorAll('.fade-in');
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeIns.forEach(el => appearOnScroll.observe(el));
+</script>
+
+</body>
+</html>
