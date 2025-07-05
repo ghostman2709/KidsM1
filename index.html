@@ -14,12 +14,12 @@
       background: linear-gradient(135deg, #001122, #002244);
       color: #66ccff;
       line-height: 1.6;
-      text-align: center;
       scroll-behavior: smooth;
     }
 
     header {
       padding: 2rem 1rem 1rem;
+      text-align: center;
     }
 
     header h1 {
@@ -38,13 +38,22 @@
       font-weight: 600;
     }
 
-    .container {
+    .section {
+      padding: 2rem 1.5rem 3rem;
       max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
+      margin: 1rem auto;
+      border: 2px solid #66ccff;
       border-radius: 16px;
-      background: rgba(0, 18, 34, 0.6);
+      background: rgba(0, 17, 34, 0.6);
       box-shadow: 0 0 30px #66ccff, 0 0 60px #3399ffaa;
+    }
+
+    .section h2 {
+      color: #66ccff;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px #3399ff;
+      font-weight: 700;
     }
 
     .link {
@@ -52,13 +61,14 @@
       background: rgba(102, 204, 255, 0.1);
       color: #66ccff;
       padding: 14px 20px;
-      margin: 15px 30px;
+      margin: 15px auto;
       text-decoration: none;
       border: 2px solid #66ccff;
       border-radius: 12px;
       transition: all 0.3s ease;
       font-weight: 700;
       font-size: 18px;
+      max-width: 300px;
       backdrop-filter: blur(5px);
       cursor: pointer;
       box-shadow: 0 0 10px #66ccff;
@@ -68,10 +78,11 @@
       background: #66ccff;
       color: #001122;
       transform: scale(1.05);
+      box-shadow: 0 0 20px #66ccffcc;
     }
 
     .pix-section {
-      margin: 40px auto;
+      margin-top: 3rem;
       padding: 2rem;
       background: rgba(102, 204, 255, 0.12);
       border-radius: 16px;
@@ -79,7 +90,7 @@
     }
 
     .pix-section h2 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #66ccff;
       text-shadow: 0 0 10px #3399ff;
       font-weight: 700;
@@ -108,13 +119,6 @@
       word-break: break-word;
     }
 
-    #msgCopiadoEbook, #msgCopiadoCombo {
-      color: #00ff88;
-      font-weight: 700;
-      margin-top: 10px;
-      display: none;
-    }
-
     .btn-verde {
       display: none;
       background-color: #39ff14;
@@ -138,9 +142,36 @@
       box-shadow: 0 0 20px #2ecc00;
     }
 
-    .section-divider {
-      border-top: 2px solid #3399ff;
-      margin: 50px 0;
+    #msgCopiadoEbook, #msgCopiadoCombo {
+      display: none;
+      color: #00ff88;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    .access-link {
+      display: inline-block;
+      margin-top: 30px;
+    }
+
+    #audioControl {
+      margin: 2rem auto;
+      background: rgba(102, 204, 255, 0.1);
+      border: 2px solid #66ccff;
+      color: #66ccff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    #audioControl:hover {
+      background: #66ccff;
+      color: #001122;
+      transform: scale(1.05);
     }
 
     footer {
@@ -155,14 +186,12 @@
       header h1 {
         font-size: 2rem;
       }
-
-      .link {
-        font-size: 1rem;
-        margin: 10px;
+      .section h2 {
+        font-size: 1.4rem;
       }
-
-      .btn-verde {
+      .link, .btn-verde {
         font-size: 1rem;
+        padding: 0.8rem 1.2rem;
       }
     }
   </style>
@@ -174,7 +203,7 @@
   <p>O Poder de 10 Minutos por Dia</p>
 </header>
 
-<div class="container">
+<div class="section">
   <h2>📘 Capítulos Gratuitos</h2>
   <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank">Capítulo 1</a>
   <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
@@ -182,11 +211,13 @@
   <a class="link" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank">Capítulo 4</a>
   <a class="link" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank">Capítulo 5</a>
 
-  <p style="margin-top: 30px; color: #99ccff; font-weight: 600;">Para desbloquear os capítulos 6 a 20:</p>
+  <h2>🎧 Trilha Sonora de Foco</h2>
+  <button id="audioControl">Ativar Trilha Sonora 🎧</button>
+  <audio id="bgAudio" src="audio.mp3" loop></audio>
 
   <div class="pix-section" id="pixEbook">
     <h2>📗 Ebook Completo – R$19,99</h2>
-    <p>Via Pix, com envio do comprovante.</p>
+    <p>Pagamento via Pix para liberar capítulos 6 a 20.</p>
     <img class="pix-qr" src="qrcode-pix-erico.png" alt="QR Code Pix Ebook" />
     <button onclick="copiarPix('pixPayloadEbook','btnEnviarComprovanteEbook','msgCopiadoEbook')" class="link">📋 Copiar chave Pix</button>
     <p class="pix-key" id="pixPayloadEbook">00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540519.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510Uitd1vwYnc63049A7C</p>
@@ -194,11 +225,9 @@
     <a id="btnEnviarComprovanteEbook" class="btn-verde" target="_blank" rel="noopener noreferrer">📤 Enviar comprovante via WhatsApp</a>
   </div>
 
-  <div class="section-divider"></div>
-
   <div class="pix-section" id="pixCombo">
     <h2>🔥 Combo Plus – R$24,99</h2>
-    <p>Inclui Ebook + Grupo VIP com mais de 200 audiobooks e PDFs.</p>
+    <p>Inclui Ebook completo + Grupo VIP com mais de 200 audiobooks e PDFs.</p>
     <img class="pix-qr" src="qrcode-pix-comboplus.png" alt="QR Code Pix Combo Plus" />
     <button onclick="copiarPix('pixPayloadCombo','btnEnviarComprovanteCombo','msgCopiadoCombo')" class="link">📋 Copiar chave Pix</button>
     <p class="pix-key" id="pixPayloadCombo">00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540524.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510wZYGFi1iA26304125D</p>
@@ -212,24 +241,35 @@
 </footer>
 
 <script>
+  const btn = document.getElementById('audioControl');
+  const audio = document.getElementById('bgAudio');
+  let isPlaying = false;
+  btn.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
+      btn.textContent = 'Parar Trilha Sonora ⏸️';
+      isPlaying = true;
+    } else {
+      audio.pause();
+      btn.textContent = 'Ativar Trilha Sonora 🎧';
+      isPlaying = false;
+    }
+  });
+
   function copiarPix(idPayload, idBtn, idMsg) {
     const payload = document.getElementById(idPayload).innerText.trim();
     navigator.clipboard.writeText(payload).then(() => {
       document.getElementById(idMsg).style.display = "block";
       const btn = document.getElementById(idBtn);
       btn.style.display = "inline-block";
-
       btn.scrollIntoView({ behavior: "smooth", block: "center" });
-
       const telefone = "5555996043937";
-
       let texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante.";
       if (idBtn === "btnEnviarComprovanteCombo") {
         texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 24,99";
       } else if (idBtn === "btnEnviarComprovanteEbook") {
         texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 19,99";
       }
-
       const mensagem = encodeURIComponent(texto);
       btn.href = `https://wa.me/${telefone}?text=${mensagem}`;
     }).catch(() => {
