@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <title>Hiperfoco Acesso - Capítulos Completos</title>
+  <title>Hiperfoco Acesso e Ofertas</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
@@ -46,7 +46,6 @@
       border-radius: 16px;
       background: rgba(0, 17, 34, 0.6);
       box-shadow: 0 0 30px #66ccff, 0 0 60px #3399ffaa;
-      text-align: center;
     }
 
     .section h2 {
@@ -74,7 +73,6 @@
       cursor: pointer;
       box-shadow: 0 0 10px #66ccff;
       text-align: center;
-      user-select: none;
     }
 
     .link:hover {
@@ -82,6 +80,78 @@
       color: #001122;
       transform: scale(1.05);
       box-shadow: 0 0 20px #66ccffcc;
+    }
+
+    .pix-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: rgba(102, 204, 255, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 0 20px #66ccff88, 0 0 50px #3399ff55;
+    }
+
+    .pix-section h2 {
+      font-size: 1.6rem;
+      color: #66ccff;
+      text-shadow: 0 0 10px #3399ff;
+      font-weight: 700;
+    }
+
+    .pix-section p {
+      color: #99ccff;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .pix-qr {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #66ccff;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .pix-key {
+      font-weight: bold;
+      color: #aaccee;
+      margin-top: 15px;
+      font-size: 14px;
+      word-break: break-word;
+      user-select: all;
+      cursor: text;
+      text-align: center;
+    }
+
+    .btn-verde {
+      background-color: #39ff14;
+      color: #001100;
+      padding: 14px 30px;
+      font-weight: 700;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 0 12px #39ff14, 0 0 25px #39ff14aa;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-verde:hover {
+      background-color: #2ecc00;
+      color: #fff;
+      box-shadow: 0 0 20px #2ecc00;
+    }
+
+    #msgCopiadoEbook, #msgCopiadoCombo {
+      display: none;
+      color: #00ff88;
+      font-weight: 700;
+      margin-top: 15px;
+      text-align: center;
     }
 
     #audioControl {
@@ -127,18 +197,81 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .section h2 {
-        font-size: 1.4rem;
-      }
-      .link, #audioControl {
-        font-size: 1rem;
-        padding: 0.8rem 1.2rem;
-        max-width: 100%;
-      }
+    /* Estilos para o novo formulário de upload */
+    .payment-form-section {
+        border-top: 2px solid #007bff;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+    .payment-form-section .field {
+        margin-bottom: 15px;
+    }
+    .payment-form-section label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #99ccff;
+    }
+    .payment-form-section input[type="text"],
+    .payment-form-section input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #007bff;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        box-sizing: border-box;
+    }
+    .payment-form-section button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .payment-form-section button:hover {
+        background-color: #0056b3;
+    }
+    .message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+    }
+    .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    .message.success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    .hidden {
+        display: none;
+    }
+    #loadingSpinner {
+        display: none;
+        border: 4px solid rgba(0, 0, 0, .1);
+        border-left-color: #007bff;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+    }
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    /* Estilos para ocultar seções quando não for a página de pagamento */
+    .hide-on-payment-page {
+        display: block; /* Default visibility */
+    }
+    .payment-page-only {
+        display: none; /* Hidden by default */
     }
   </style>
 </head>
@@ -150,33 +283,129 @@
 </header>
 
 <div class="section fade-in">
-  <button id="audioControl" class="fade-in">Ativar Trilha Sonora 🎧</button>
-  <audio id="bgAudio" src="audio.mp3" loop></audio>
+  <div id="generalContent" class="hide-on-payment-page">
+      <h2 class="fade-in">📘 Capítulos Gratuitos</h2>
+      <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank" rel="noopener noreferrer">Capítulo 1</a>
+      <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank" rel="noopener noreferrer">Capítulo 2</a>
+      <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank" rel="noopener noreferrer">Capítulo 3</a>
+      <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank" rel="noopener noreferrer">Capítulo 4</a>
+      <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank" rel="noopener noreferrer">Capítulo 5</a>
 
-  <h2>📘 Capítulos Completos</h2>
+      <h2 class="fade-in">🎧 Trilha Sonora de Foco</h2>
+      <button id="audioControl" class="fade-in">Ativar Trilha Sonora 🎧</button>
+      <audio id="bgAudio" src="audio.mp3" loop></audio>
+  </div>
 
-  <a class="link fade-in" href="https://github.com/ghostman2709/AudioBooks-" target="_blank" rel="noopener noreferrer">🎧 AudioBooks</a>
 
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank" rel="noopener noreferrer">Capítulo 1</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank" rel="noopener noreferrer">Capítulo 2</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank" rel="noopener noreferrer">Capítulo 3</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank" rel="noopener noreferrer">Capítulo 4</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank" rel="noopener noreferrer">Capítulo 5</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-6/" target="_blank" rel="noopener noreferrer">Capítulo 6</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-7/" target="_blank" rel="noopener noreferrer">Capítulo 7</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-8/" target="_blank" rel="noopener noreferrer">Capítulo 8</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-9/" target="_blank" rel="noopener noreferrer">Capítulo 9</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-10/" target="_blank" rel="noopener noreferrer">Capítulo 10</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-11/" target="_blank" rel="noopener noreferrer">Capítulo 11</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-12/" target="_blank" rel="noopener noreferrer">Capítulo 12</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-13/" target="_blank" rel="noopener noreferrer">Capítulo 13</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-14/" target="_blank" rel="noopener noreferrer">Capítulo 14</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-15/" target="_blank" rel="noopener noreferrer">Capítulo 15</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-16/" target="_blank" rel="noopener noreferrer">Capítulo 16</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-17/" target="_blank" rel="noopener noreferrer">Capítulo 17</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-18/" target="_blank" rel="noopener noreferrer">Capítulo 18</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-19/" target="_blank" rel="noopener noreferrer">Capítulo 19</a>
-  <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-20/" target="_blank" rel="noopener noreferrer">Capítulo 20</a>
+  <div class="pix-section fade-in" id="pixEbook">
+    <h2>
+        {% if is_payment_page %}
+            Confirmação de Pagamento
+        {% else %}
+            📗 Ebook Completo R$19,99
+        {% endif %}
+    </h2>
+    <p>
+        {% if is_payment_page %}
+            Para o produto: <strong>{{ produto_nome }}</strong> (Valor: <strong>{{ valor_esperado }}</strong>)
+        {% else %}
+            Pagamento via Pix para liberar capítulos 6 a 20.
+        {% endif %}
+    </p>
+    
+    <img class="pix-qr" src="{% if is_payment_page %}data:image/png;base64,{{ qrcode_b64 }}{% else %}qrcode-pix-erico.png{% endif %}" alt="QR Code para pagamento Pix" />
+    
+    <button onclick="copiarPix('pixPayloadEbook', 'btnEnviarComprovanteEbook', 'msgCopiadoEbook')" class="link fade-in" type="button">📋 Copiar chave Pix</button>
+    <p class="pix-key" id="pixPayloadEbook">
+        {% if is_payment_page %}
+            {{ pix_code }}
+        {% else %}
+            00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540519.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510Uitd1vwYnc63049A7C
+        {% endif %}
+    </p>
+    <p id="msgCopiadoEbook">✅ Pix copiado!</p>
+    
+    <div class="payment-form-section hidden" id="formEbookPayment">
+        <hr>
+        <h3>Confirme seu Pagamento</h3>
+        <p>Preencha os dados abaixo para validar seu comprovante.</p>
+        <input type="hidden" id="currentPedidoIdEbook" value="{{ pedido_id if is_payment_page else '' }}">
+        <input type="hidden" id="expectedValueEbook" value="{{ valor_esperado if is_payment_page else 'R$ 19,99' }}">
+
+        <div class="field">
+            <label for="idTransacaoPartialEbook">4 ou 5 dígitos iniciais do ID da Transação PIX:</label>
+            <input type="text" id="idTransacaoPartialEbook" placeholder="Ex: e6070" maxlength="5">
+        </div>
+        
+        <button id="btnConfirmarIdEbook" onclick="showUploadSection('formEbookPayment')">Confirmar ID</button>
+        
+        <div id="uploadSectionEbook" class="hidden">
+            <p style="margin-top: 10px;">Agora, faça o upload da *IMAGEM* do comprovante de pagamento:</p>
+            <div class="field">
+                <label for="comprovanteFileEbook">Comprovante de Pagamento:</label>
+                <input type="file" id="comprovanteFileEbook" accept="image/*">
+            </div>
+            <button id="btnEnviarComprovanteEbook" onclick="sendComprovante('Ebook')">Enviar Comprovante</button>
+        </div>
+        <div id="loadingSpinnerEbook" class="hidden"></div>
+        <div id="messageEbook" class="message hidden"></div>
+    </div>
+  </div>
+
+  <div class="pix-section fade-in {% if is_payment_page and default_pix_section_id == 'pixEbook' %}hidden{% endif %}" id="pixCombo">
+    <h2>
+        {% if is_payment_page %}
+            Confirmação de Pagamento
+        {% else %}
+            🔥 Combo Plus – R$24,99
+        {% endif %}
+    </h2>
+    <p>
+        {% if is_payment_page %}
+            Para o produto: <strong>{{ produto_nome }}</strong> (Valor: <strong>{{ valor_esperado }}</strong>)
+        {% else %}
+            Inclui Ebook completo + Grupo VIP com mais de 200 audiobooks e PDFs.
+        {% endif %}
+    </p>
+    
+    <img class="pix-qr" src="{% if is_payment_page %}data:image/png;base64,{{ qrcode_b64 }}{% else %}qrcode-pix-comboplus.png{% endif %}" alt="QR Code para pagamento Pix" />
+    
+    <button onclick="copiarPix('pixPayloadCombo', 'btnEnviarComprovanteCombo', 'msgCopiadoCombo')" class="link fade-in" type="button">📋 Copiar chave Pix</button>
+    <p class="pix-key" id="pixPayloadCombo">
+        {% if is_payment_page %}
+            {{ pix_code }}
+        {% else %}
+            00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540524.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510wZYGFi1iA26304125D
+        {% endif %}
+    </p>
+    <p id="msgCopiadoCombo">✅ Pix copiado!</p>
+    
+    <div class="payment-form-section hidden" id="formComboPayment">
+        <hr>
+        <h3>Confirme seu Pagamento</h3>
+        <p>Preencha os dados abaixo para validar seu comprovante.</p>
+        <input type="hidden" id="currentPedidoIdCombo" value="{{ pedido_id if is_payment_page else '' }}">
+        <input type="hidden" id="expectedValueCombo" value="{{ valor_esperado if is_payment_page else 'R$ 24,99' }}">
+
+        <div class="field">
+            <label for="idTransacaoPartialCombo">4 ou 5 dígitos iniciais do ID da Transação PIX:</label>
+            <input type="text" id="idTransacaoPartialCombo" placeholder="Ex: f1a2b" maxlength="5">
+        </div>
+        
+        <button id="btnConfirmarIdCombo" onclick="showUploadSection('formComboPayment')">Confirmar ID</button>
+        
+        <div id="uploadSectionCombo" class="hidden">
+            <p style="margin-top: 10px;">Agora, faça o upload da *IMAGEM* do comprovante de pagamento:</p>
+            <div class="field">
+                <label for="comprovanteFileCombo">Comprovante de Pagamento:</label>
+                <input type="file" id="comprovanteFileCombo" accept="image/*">
+            </div>
+            <button id="btnEnviarComprovanteCombo" onclick="sendComprovante('Combo')">Enviar Comprovante</button>
+        </div>
+        <div id="loadingSpinnerCombo" class="hidden"></div>
+        <div id="messageCombo" class="message hidden"></div>
+    </div>
+  </div>
 </div>
 
 <footer class="fade-in">
@@ -184,34 +413,155 @@
 </footer>
 
 <script>
+  // Variáveis globais para o contexto de pagamento (preenchidas por Jinja2)
+  const isPaymentPage = {{ 'true' if is_payment_page else 'false' }};
+  const currentPedidoId = "{{ pedido_id if is_payment_page else '' }}";
+  const currentProdutoNome = "{{ produto_nome if is_payment_page else '' }}";
+  const currentValorEsperadoStr = "{{ valor_esperado if is_payment_page else '' }}"; // "R$ 19,99"
+  const currentPixCode = "{{ pix_code if is_payment_page else '' }}";
+  // Extrai o valor numérico de "R$ XX,YY" para o OCR
+  const currentValorEsperadoNum = currentValorEsperadoStr ? parseFloat(currentValorEsperadoStr.replace('R$', '').replace(',', '.').trim()) : null;
+
+  const ocrServiceUrl = "/confirmar_pagamento_web"; // Endpoint no seu Flask
+
+  // Controle da trilha sonora
   const btnAudio = document.getElementById('audioControl');
   const audio = document.getElementById('bgAudio');
   let isPlaying = false;
 
-  btnAudio.addEventListener('click', () => {
-    if (!isPlaying) {
-      audio.play();
-      btnAudio.textContent = 'Parar Trilha Sonora ⏸️';
-      isPlaying = true;
-    } else {
-      audio.pause();
-      btnAudio.textContent = 'Ativar Trilha Sonora 🎧';
-      isPlaying = false;
-    }
-  });
+  if(btnAudio) { // Verifica se o botão existe antes de adicionar listener
+      btnAudio.addEventListener('click', () => {
+        if (!isPlaying) {
+          audio.play();
+          btnAudio.textContent = 'Parar Trilha Sonora ⏸️';
+          isPlaying = true;
+        } else {
+          audio.pause();
+          btnAudio.textContent = 'Ativar Trilha Sonora 🎧';
+          isPlaying = false;
+        }
+      });
+  }
 
-  const fadeIns = document.querySelectorAll('.fade-in');
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
+  // Função para copiar Pix
+  function copiarPix(idPayload, idBtn, idMsg) {
+    const payload = document.getElementById(idPayload).innerText.trim();
+    navigator.clipboard.writeText(payload).then(() => {
+      document.getElementById(idMsg).style.display = "block";
+      
+      // Se não for uma página de pagamento específica (como vindo do bot),
+      // o botão ainda levaria ao WhatsApp. Agora, mostra o formulário de upload.
+      if (!isPaymentPage) {
+          const sectionId = idPayload.includes('Ebook') ? 'formEbookPayment' : 'formComboPayment';
+          document.getElementById(sectionId).classList.remove('hidden');
+          document.getElementById(idBtn).style.display = "none"; // Esconde o link antigo do WhatsApp
+          document.getElementById(idBtn).previousElementSibling.style.display = "none"; // Esconde o botão "Copiar chave Pix" original
+          document.getElementById(sectionId).scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+          // Se é a página de pagamento, o QR e o PIX code já foram copiados.
+          // O formulário de upload já está visível ou será visível
+          alert("Código PIX copiado para a área de transferência!");
       }
+
+    }).catch(() => {
+      alert("Erro ao copiar a chave Pix.");
     });
-  }, { threshold: 0.1 });
+  }
 
-  fadeIns.forEach(el => appearOnScroll.observe(el));
-</script>
+  // Funções para o fluxo de pagamento web
+  function showUploadSection(formId) {
+    const sectionPrefix = formId.includes('Ebook') ? 'Ebook' : 'Combo';
+    const idTransacaoPartial = document.getElementById(`idTransacaoPartial${sectionPrefix}`).value.trim();
 
-</body>
-</html>
+    if (idTransacaoPartial.length < 4 || idTransacaoPartial.length > 5) {
+        showMessage(sectionPrefix, 'error', 'Por favor, digite 4 ou 5 dígitos iniciais do ID da transação.', false);
+        return;
+    }
+    
+    // Oculta o botão "Confirmar ID"
+    document.getElementById(`btnConfirmarId${sectionPrefix}`).classList.add('hidden');
+    // Mostra a seção de upload
+    document.getElementById(`uploadSection${sectionPrefix}`).classList.remove('hidden');
+    showMessage(sectionPrefix, '', '', false); // Limpa mensagens anteriores
+  }
+
+  async function sendComprovante(sectionPrefix) {
+    const idTransacaoPartial = document.getElementById(`idTransacaoPartial${sectionPrefix}`).value.trim();
+    const comprovanteFile = document.getElementById(`comprovanteFile${sectionPrefix}`).files[0];
+    const pedidoIdToUse = isPaymentPage ? currentPedidoId : document.getElementById(`currentPedidoId${sectionPrefix}`).value;
+    const expectedValueToUseStr = isPaymentPage ? currentValorEsperadoStr : document.getElementById(`expectedValue${sectionPrefix}`).value;
+    const expectedValueToUseNum = parseFloat(expectedValueToUseStr.replace('R$', '').replace(',', '.').trim());
+
+
+    if (!idTransacaoPartial || !comprovanteFile) {
+        showMessage(sectionPrefix, 'error', 'Por favor, preencha todos os campos e selecione um comprovante.', false);
+        return;
+    }
+
+    if (idTransacaoPartial.length < 4 || idTransacaoPartial.length > 5) {
+        showMessage(sectionPrefix, 'error', 'O ID da transação deve ter 4 ou 5 dígitos.', false);
+        return;
+    }
+    
+    if (!pedidoIdToUse && !isPaymentPage) { // Se não for a página de pagamento e o pedidoId não foi preenchido dinamicamente
+        showMessage(sectionPrefix, 'error', 'Erro: ID do pedido não disponível. Recarregue a página ou entre em contato com o suporte.', false);
+        return;
+    }
+
+    showMessage(sectionPrefix, 'success', 'Enviando comprovante, aguarde...', true);
+    showLoadingSpinner(sectionPrefix, true);
+    
+    const reader = new FileReader();
+    reader.onloadend = async () => {
+        const base64Image = reader.result.split(',')[1];
+
+        try {
+            const response = await fetch(ocrServiceUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    pedido_id: pedidoIdToUse, // Usa o ID do pedido correto
+                    id_transacao_parcial: idTransacaoPartial,
+                    imagem_b64: base64Image
+                }),
+            });
+
+            const result = await response.json();
+            showLoadingSpinner(sectionPrefix, false);
+
+            if (response.ok && result.success) {
+                showMessage(sectionPrefix, 'success', result.message || 'Pagamento confirmado com sucesso!', true);
+                if (result.redirect_url) {
+                    setTimeout(() => {
+                        window.location.href = result.redirect_url;
+                    }, 2000);
+                }
+            } else {
+                showMessage(sectionPrefix, 'error', result.message || 'Falha ao confirmar pagamento. Tente novamente.', false);
+            }
+        } catch (error) {
+            console.error('Erro ao enviar comprovante:', error);
+            showLoadingSpinner(sectionPrefix, false);
+            showMessage(sectionPrefix, 'error', 'Erro de comunicação com o servidor. Tente novamente.', false);
+        }
+    };
+    reader.readAsDataURL(comprovanteFile);
+  }
+
+  function showMessage(sectionPrefix, type, text, autoHide) {
+    const messageElement = document.getElementById(`message${sectionPrefix}`);
+    messageElement.classList.remove('success', 'error', 'hidden');
+    messageElement.textContent = text;
+    if (type) {
+        messageElement.classList.add(type);
+    }
+    if (autoHide) {
+        setTimeout(() => {
+            messageElement.classList.add('hidden');
+        }, 5000);
+    }
+  }
+
+  func
