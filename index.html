@@ -7,101 +7,127 @@
   <title>HiperBoot 🤖</title>
   <style>
     body {
-      margin: 0;
+      background-color: #0d0d0d;
+      color: #eaeaea;
       font-family: 'Segoe UI', sans-serif;
-      background: #111;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      background: #000;
-      width: 100%;
-      text-align: center;
-      padding: 1.5rem 1rem;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      color: #00ffcc;
-    }
-
-    .hero img {
-      max-width: 400px;
-      border-radius: 20px;
-      margin-top: 1rem;
-      box-shadow: 0 0 20px #00ffcc55;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 2rem;
-      padding: 1.5rem;
-      background: #1a1a1a;
-      border-radius: 16px;
-      box-shadow: 0 0 10px #00ffcc33;
-    }
-
-    .section h2 {
-      color: #00ffcc;
-      margin-bottom: 0.5rem;
-    }
-
-    .section p {
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
     }
 
+    header {
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    header img {
+      max-width: 250px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      margin: 20px 0 10px;
+    }
+
+    .fluxo {
+      background-color: #1a1a1a;
+      margin: 20px;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
+
+    .fluxo h2 {
+      color: #00ffff;
+      font-size: 1.8rem;
+    }
+
+    .fluxo p {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .etapas {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    .etapas li {
+      margin-bottom: 10px;
+    }
+
+    .destaque {
+      color: #00ffff;
+      font-weight: bold;
+    }
+
     footer {
-      margin: 2rem 0;
+      text-align: center;
+      padding: 25px;
       font-size: 0.9rem;
-      color: #666;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      header img {
+        max-width: 90%;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>HiperBoot 🤖 Inteligência Automática</h1>
+    <img src="https://cdn.openai.com/chat-assets/hyperboot-robot-vip.webp" alt="Robô HiperBoot" />
+    <h1>HiperBoot 🤖</h1>
+    <p>Automatize vendas, entregas, pagamentos e agendamentos com inteligência.</p>
   </header>
 
-  <div class="hero">
-    <img src="A_photograph_features_signage_for_a_duty-free_reta.png" alt="Robô HiperBoot">
+  <div class="fluxo">
+    <h2>🚀 Como funciona o HiperBoot?</h2>
+    <ul class="etapas">
+      <li>1. Cliente chama o HiperBoot pelo WhatsApp.</li>
+      <li>2. O bot mostra os <span class="destaque">produtos disponíveis</span> e gera o Pix.</li>
+      <li>3. O cliente envia o <span class="destaque">comprovante</span>.</li>
+      <li>4. O HiperBoot verifica a veracidade via <span class="destaque">API bancária</span>.</li>
+      <li>5. Se confirmado, o bot:
+        <ul>
+          <li>🛵 Aciona motoboy/Uber de confiança com endereço para retirada e entrega.</li>
+          <li>📦 Produtos digitais: libera link de acesso automático.</li>
+        </ul>
+      </li>
+      <li>6. Tudo é feito <span class="destaque">automaticamente</span>.</li>
+    </ul>
   </div>
 
-  <div class="section">
-    <h2>🚀 Como Funciona o HiperBoot</h2>
-    <p>
-      O cliente faz o pedido → O boot mostra o produto → O cliente compra e envia o comprovante → 
-      A API verifica automaticamente se o valor entrou no sistema.
-    </p>
-    <p>
-      ✅ Se confirmado: o boot libera o produto. Para produtos físicos, ele aciona automaticamente 
-      o motoboy ou entregador de confiança com as instruções de retirada e entrega. Para produtos 
-      digitais, o link de acesso é liberado instantaneamente.
-    </p>
+  <div class="fluxo">
+    <h2>📅 Sistema de Agendamentos</h2>
+    <p>Perfeito para:</p>
+    <ul class="etapas">
+      <li>👨‍⚖️ Advogados</li>
+      <li>💇 Barbearias</li>
+      <li>💅 Manicures e outros serviços</li>
+    </ul>
+    <p>Com dashboard de horários e <span class="destaque">notificações automáticas</span> 1h antes do atendimento.</p>
   </div>
 
-  <div class="section">
-    <h2>🗓️ Sistema de Agendamento Integrado</h2>
-    <p>
-      Ideal para barbearias, manicures, advogados e clínicas: agendamento fácil com painel administrativo 
-      moderno, envio automático de mensagens 1 hora antes do horário e verificação de disponibilidade em tempo real.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>📊 Painel com Dashboard Inteligente</h2>
-    <p>
-      Visualize todos os agendamentos, status de pagamentos e entregas com notificações automáticas. 
-      Gerencie o seu negócio com inteligência artificial e automações que economizam tempo e aumentam suas vendas.
-    </p>
+  <div class="fluxo">
+    <h2>🎯 Benefícios do HiperBoot</h2>
+    <ul class="etapas">
+      <li>✅ Atendimento automático 24h</li>
+      <li>✅ Confirmação de Pix com API bancária</li>
+      <li>✅ Integração com entregas físicas e digitais</li>
+      <li>✅ Redução de erros e ganho de tempo</li>
+      <li>✅ Ideal para e-commerce, autônomos e serviços locais</li>
+    </ul>
   </div>
 
   <footer>
-    © 2025 HiperBoot · Todos os direitos reservados.
+    HiperBoot &copy; 2025 – Soluções inteligentes e automatizadas.
   </footer>
-
 </body>
 </html>
