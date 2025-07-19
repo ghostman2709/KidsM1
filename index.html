@@ -1,216 +1,107 @@
-<!-- ARQUIVO COMPLETO COM VISUAL CATIVE E GATILHOS -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#001122" />
-  <meta name="description" content="Hiperboot: Robô de Vendas via WhatsApp com Entrega e Pagamento Automatizados" />
-  <title>Hiperboot – Seu Robô de Vendas 24h</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <title>HiperBoot 🤖</title>
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #001122, #002244);
-      color: #66ccff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     header {
-      padding: 2rem 1rem 1rem;
+      background: #000;
+      width: 100%;
       text-align: center;
+      padding: 1.5rem 1rem;
     }
+
     header h1 {
-      font-size: 2.7rem;
-      color: #66ccff;
-      margin: 0;
-      text-shadow: 0 0 20px #66ccff, 0 0 30px #3399ff;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-size: 2rem;
+      color: #00ffcc;
     }
-    .highlight-box {
-      margin: 1.5rem auto;
-      max-width: 650px;
-      padding: 1.5rem;
-      background: rgba(0,0,0,0.4);
-      border: 2px solid #66ccff;
-      border-radius: 12px;
-      box-shadow: 0 0 12px #3399ff;
-    }
-    .highlight-box p {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #bbddff;
-      margin: 0;
-      text-align: center;
-    }
-    .section {
-      padding: 2rem 1.5rem 3rem;
-      max-width: 850px;
-      margin: 1.5rem auto;
-      border: 2px solid #66ccff;
-      border-radius: 16px;
-      background: rgba(0, 17, 34, 0.6);
-      box-shadow: 0 0 30px #66ccff, 0 0 60px #3399ffaa;
-    }
-    .section h2 {
-      color: #66ccff;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 5px #3399ff;
-      font-weight: 700;
-    }
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-    li::before {
-      content: "\2713 ";
-      color: #66ccff;
-      margin-right: 5px;
-    }
-    .whatsapp-btn {
-      background: #25ff75;
-      border-color: #25ff75;
-      color: #001122;
-      font-size: 1.4rem;
-      padding: 1.2rem 2.5rem;
-      border-radius: 14px;
-      box-shadow: 0 0 25px #25ff75cc;
-      transition: all 0.3s ease;
-      display: block;
-      text-align: center;
+
+    .hero img {
       max-width: 400px;
-      margin: 2.5rem auto;
+      border-radius: 20px;
+      margin-top: 1rem;
+      box-shadow: 0 0 20px #00ffcc55;
     }
-    .whatsapp-btn:hover {
-      background: #001122;
-      color: #25ff75;
-      box-shadow: 0 0 35px #25ff75;
-      transform: scale(1.07);
+
+    .section {
+      max-width: 800px;
+      margin: 2rem;
+      padding: 1.5rem;
+      background: #1a1a1a;
+      border-radius: 16px;
+      box-shadow: 0 0 10px #00ffcc33;
     }
-    .vip-benefits {
-      background: rgba(0, 18, 34, 0.8);
-      border-radius: 12px;
-      padding: 2rem;
-      color: #bbddff;
-      box-shadow: 0 0 10px #3399ff;
-      margin-top: 2rem;
+
+    .section h2 {
+      color: #00ffcc;
+      margin-bottom: 0.5rem;
     }
-    .vip-benefits h3 {
-      color: #66ccff;
-      margin-bottom: 1rem;
-      font-weight: 700;
+
+    .section p {
+      line-height: 1.6;
     }
+
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
+      margin: 2rem 0;
       font-size: 0.9rem;
-      color: #88aabb;
-      text-shadow: 0 0 5px #3399ff88;
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-    }
-    .fade-in.appear {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    @media (max-width: 480px) {
-      header h1 { font-size: 2rem; }
-      .section h2 { font-size: 1.4rem; }
-      .whatsapp-btn {
-        font-size: 1.1rem;
-        padding: 1rem 1.5rem;
-      }
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <header class="fade-in">
-    <h1>🤖 Hiperboot 📱</h1>
-    <div class="highlight-box">
-      <p>✨ Ele responde. Ele vende. Ele entrega. Tudo isso sozinho. Transforme seu WhatsApp em um robô de vendas 24h agora.</p>
-    </div>
+
+  <header>
+    <h1>HiperBoot 🤖 Inteligência Automática</h1>
   </header>
 
-  <div class="section fade-in">
-    <h2>🚀 Por Que o Hiperboot é Diferente?</h2>
-    <p>Você ainda responde clientes manualmente? Deixe isso no passado. O Hiperboot é o seu robô de vendas completo: ele atende, gera Pix, valida pagamentos e entrega — sem erro e sem precisar de você.</p>
+  <div class="hero">
+    <img src="A_photograph_features_signage_for_a_duty-free_reta.png" alt="Robô HiperBoot">
   </div>
 
-  <div class="section fade-in">
-    <h2>💡 Benefícios Reais e Poderosos</h2>
-    <ul>
-      <li>🤖 Atendimento automático 24 horas via WhatsApp</li>
-      <li>💳 Pagamento instantâneo com Pix ou cartão</li>
-      <li>🔎 Validação de comprovantes direto via API bancária</li>
-      <li>📦 Entrega digital automática ou motoboy/Uber</li>
-      <li>📍 Envio automático do endereço de retirada e entrega</li>
-      <li>📊 Painel com status em tempo real</li>
-      <li>📈 Aumenta vendas e reduz custos com atendimento</li>
-    </ul>
+  <div class="section">
+    <h2>🚀 Como Funciona o HiperBoot</h2>
+    <p>
+      O cliente faz o pedido → O boot mostra o produto → O cliente compra e envia o comprovante → 
+      A API verifica automaticamente se o valor entrou no sistema.
+    </p>
+    <p>
+      ✅ Se confirmado: o boot libera o produto. Para produtos físicos, ele aciona automaticamente 
+      o motoboy ou entregador de confiança com as instruções de retirada e entrega. Para produtos 
+      digitais, o link de acesso é liberado instantaneamente.
+    </p>
   </div>
 
-  <div class="section fade-in">
-    <h2>🏆 Empresas Que Já Usam Automação</h2>
-    <p>As maiores marcas do Brasil já confiam em bots para escalar:</p>
-    <ul>
-      <li>📱 iFood – Pedidos, suporte e entregas automatizados</li>
-      <li>🏦 Nubank – Atendimento 24h com IA</li>
-      <li>🚗 99 – Suporte via robô e automação de corridas</li>
-      <li>📦 Magazine Luiza – Atendimento via assistente "Lu"</li>
-    </ul>
+  <div class="section">
+    <h2>🗓️ Sistema de Agendamento Integrado</h2>
+    <p>
+      Ideal para barbearias, manicures, advogados e clínicas: agendamento fácil com painel administrativo 
+      moderno, envio automático de mensagens 1 hora antes do horário e verificação de disponibilidade em tempo real.
+    </p>
   </div>
 
-  <div class="section fade-in">
-    <h2>📦 Escolha Seu Pacote Ideal</h2>
-    <div class="vip-benefits">
-      <h3>🔹 Pacote Padrão</h3>
-      <ul>
-        <li>Acesso completo ao sistema</li>
-        <li>Automação básica de WhatsApp</li>
-        <li>Suporte e atualizações mensais</li>
-      </ul>
-    </div>
-    <div class="vip-benefits" style="border: 2px solid gold; background: rgba(30, 20, 10, 0.4);">
-      <h3>👑 Pacote VIP</h3>
-      <ul>
-        <li>Todos os recursos do pacote padrão</li>
-        <li>Respostas humanizadas com IA</li>
-        <li>Consultoria com o criador</li>
-        <li>Atualizações semanais sob demanda</li>
-      </ul>
-      <p style="margin-top: 1rem; font-weight: bold; color: #ffd700;">
-        Ideal para quem quer escalar suas vendas com inteligência.
-      </p>
-    </div>
+  <div class="section">
+    <h2>📊 Painel com Dashboard Inteligente</h2>
+    <p>
+      Visualize todos os agendamentos, status de pagamentos e entregas com notificações automáticas. 
+      Gerencie o seu negócio com inteligência artificial e automações que economizam tempo e aumentam suas vendas.
+    </p>
   </div>
 
-  <a href="https://wa.me/5555996043937?text=(HiperBoot)" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-    💬 Quero meu WhatsApp com Hiperboot agora
-  </a>
-
-  <footer class="fade-in">
-    © 2025 Hiperboot. Todos os direitos reservados.
+  <footer>
+    © 2025 HiperBoot · Todos os direitos reservados.
   </footer>
 
-  <script>
-    const fadeIns = document.querySelectorAll('.fade-in');
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('appear');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    fadeIns.forEach(el => appearOnScroll.observe(el));
-  </script>
 </body>
 </html>
