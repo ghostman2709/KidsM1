@@ -23,21 +23,20 @@
       text-align: center;
     }
 
-    header img {
-      max-width: 150px; /* Mantém o tamanho menor */
-      border-radius: 0; /* Sem borda arredondada */
-      margin-bottom: 10px; /* Espaço abaixo da imagem */
-      /* Se a imagem tiver um fundo que você quer remover, isso precisaria ser feito
-         em um editor de imagens (ex: Photoshop, GIMP, ou ferramentas online de remoção de fundo)
-         antes de inseri-la aqui. O CSS não consegue remover o fundo de uma imagem. */
-    }
-
     h1 {
       font-size: 2.5rem;
       color: #66ccff; /* Azul neon para o título principal */
       margin: 20px 0 10px;
       text-shadow: 0 0 12px #3399ffcc; /* Efeito neon no título */
       font-weight: 700; /* Negrito da fonte Montserrat */
+    }
+
+    .slogan-header {
+      font-size: 1.2rem;
+      color: #99ccff; /* Um azul mais suave para o slogan */
+      margin-top: -10px; /* Ajusta a proximidade com o H1 */
+      text-shadow: 0 0 5px #3399ff88; /* Brilho sutil */
+      font-weight: 500;
     }
 
     /* Estilos para as seções 'fluxo' inspirados na 'section' do exemplo */
@@ -118,9 +117,6 @@
 
     /* Media queries do exemplo para responsividade */
     @media (max-width: 768px) {
-      header img {
-        max-width: 90%;
-      }
       h1 {
         font-size: 1.8rem;
       }
@@ -140,55 +136,56 @@
 </head>
 <body>
   <header>
-    <img src="file_000000007794622fb779070bc1abd3c6.png" alt="Mascote robô do HiperBoot" />
     <h1>HiperBoot 🤖</h1>
+    <p class="slogan-header">Sua Automação Inteligente para Vendas e Atendimento 24h.</p>
   </header>
 
   <div class="fluxo">
-    <h2>🚀 Como funciona o HiperBoot?</h2>
+    <h2>🚀 Automatize com o HiperBoot em 6 Passos Simples!</h2>
     <ul class="etapas">
-      <li>1. Cliente chama o HiperBoot pelo WhatsApp.</li>
-      <li>2. O bot mostra os <span class="destaque">produtos disponíveis</span> e gera o Pix.</li>
-      <li>3. O cliente envia o <span class="destaque">comprovante</span>.</li>
-      <li>4. O HiperBoot verifica a veracidade via <span class="destaque">API bancária</span>, garantindo <span class="destaque">segurança e agilidade</span>.</li>
-      <li>5. Se confirmado, o bot:
+      <li>1. <span class="destaque">Conexão Instantânea:</span> Seu cliente inicia a conversa via WhatsApp, a qualquer hora.</li>
+      <li>2. <span class="destaque">Vitrine Digital Inteligente:</span> O bot apresenta seus produtos e gera o Pix automaticamente.</li>
+      <li>3. <span class="destaque">Pagamento Simplificado:</span> O cliente envia o comprovante diretamente.</li>
+      <li>4. <span class="destaque">Confirmação Imbatível:</span> O HiperBoot verifica o Pix via <span class="destaque">API bancária</span>, garantindo <span class="destaque">segurança e veracidade em segundos!</span>.</li>
+      <li>5. <span class="destaque">Entrega Otimizada:</span>
         <ul>
-          <li>🛵 Aciona motoboy/Uber de confiança com endereço para retirada e entrega.</li>
-          <li>📦 Produtos digitais: libera link de acesso automático.</li>
+          <li>🛵 **Produtos Físicos:** Acionamos motoboy/Uber de confiança com endereço para retirada e entrega.</li>
+          <li>📦 **Produtos Digitais:** O link de acesso é liberado instantaneamente.</li>
         </ul>
       </li>
-      <li>6. Tudo é feito <span class="destaque">automaticamente</span>.</li>
+      <li>6. <span class="destaque">Liberdade e Produtividade:</span> Todo o processo é 100% automático, liberando seu tempo!</li>
     </ul>
   </div>
 
   <div class="fluxo">
-    <h2>📅 Sistema de Agendamentos</h2>
-    <p>Perfeito para:</p>
+    <h2>📅 Agendamentos Sem Complicações para o Seu Negócio!</h2>
+    <p>Perfeito para profissionais que valorizam cada minuto:</p>
     <ul class="etapas">
-      <li>👨‍⚖️ Advogados</li>
-      <li>💇 Barbearias</li>
-      <li>💅 Manicures e outros serviços</li>
+      <li>👨‍⚖️ Advogados: Nunca mais perca um compromisso importante.</li>
+      <li>💇 Barbearias: Otimize sua agenda e receba mais clientes.</li>
+      <li>💅 Manicures e outros serviços: Garanta a organização e satisfação.</li>
     </ul>
-    <p>Com dashboard de horários e <span class="destaque">notificações automáticas</span> 1h antes do atendimento.</p>
+    <p>Com dashboard de horários intuitivo e <span class="destaque">notificações automáticas</span> 1h antes do atendimento, reduzindo faltas e otimizando seu tempo.</p>
   </div>
 
   <div class="fluxo">
-    <h2>🎯 Benefícios do HiperBoot</h2>
+    <h2>🎯 Por Que o HiperBoot é Essencial Para Você?</h2>
     <ul class="etapas">
-      <li>✅ Atendimento automático 24h</li>
-      <li>✅ Confirmação de Pix com API bancária</li>
-      <li>✅ Integração com entregas físicas e digitais</li>
-      <li>✅ Redução de erros e ganho de tempo</li>
-      <li>✅ <span class="destaque">Redução de custos operacionais</span></li>
-      <li>✅ Ideal para e-commerce, autônomos e serviços locais</li>
+      <li>✅ **Atendimento 24/7:** Venda e atenda sem parar, mesmo quando você está offline.</li>
+      <li>✅ **Segurança Financeira Total:** Confirmação de Pix instantânea e segura via API bancária.</li>
+      <li>✅ **Logística Integrada:** Entregas físicas e digitais automatizadas e sem atritos.</li>
+      <li>✅ **Fim dos Erros Manuais:** Elimine falhas e retrabalhos, ganhando tempo e tranquilidade.</li>
+      <li>✅ **Economia Inteligente:** Reduza significativamente seus custos operacionais.</li>
+      <li>✅ **Versatilidade Incrível:** Ideal para e-commerce, autônomos, prestadores de serviços e negócios locais.</li>
+      <li>✅ **Foco no que Importa:** Libere seu tempo para estratégia e crescimento, não para burocracia!</li>
     </ul>
   </div>
 
   <div class="fluxo">
-    <h2>🚀 Pronto para Transformar seu Negócio?</h2>
-    <p>Fale com um de nossos especialistas e descubra como o HiperBoot pode automatizar suas operações e impulsionar suas vendas.</p>
+    <h2>🚀 Não Perca Mais Tempo e Venda Mais Agora!</h2>
+    <p>Clique abaixo e fale com um de nossos especialistas para descobrir como o HiperBoot pode revolucionar seu negócio hoje mesmo.</p>
     <p style="text-align: center;">
-      <a href="https://wa.me/5555996043937" target="_blank" class="cta-button">Fale Conosco no WhatsApp!</a>
+      <a href="https://wa.me/5555996043937" target="_blank" class="cta-button">Transforme Seu Negócio AGORA!</a>
     </p>
   </div>
 
@@ -196,4 +193,5 @@
     HiperBoot &copy; 2025 – Soluções inteligentes e automatizadas.
   </footer>
 </body>
-</html>
+  </html>
+  
