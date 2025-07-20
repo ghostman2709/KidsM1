@@ -5,43 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <title>HiperBoot 🤖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Estilos globais e cores de base do exemplo */
+    * { box-sizing: border-box; }
     body {
-      background-color: #0d0d0d;
-      color: #eaeaea;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Montserrat', sans-serif; /* Usando a fonte do exemplo */
+      background: linear-gradient(135deg, #001122, #002244); /* Fundo gradiente do exemplo */
+      color: #99ccff; /* Cor geral do texto, um pouco mais suave que o neon puro */
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      text-align: center;
       padding: 30px 15px;
+      text-align: center;
     }
 
     header img {
-      max-width: 250px;
-      border-radius: 20px;
+      max-width: 150px; /* Mantém o tamanho menor */
+      border-radius: 0; /* Sem borda arredondada */
+      margin-bottom: 10px; /* Espaço abaixo da imagem */
+      /* Ajuste para o brilho da imagem se necessário, pode depender da imagem final */
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #00ffff;
+      color: #66ccff; /* Azul neon para o título principal */
       margin: 20px 0 10px;
+      text-shadow: 0 0 12px #3399ffcc; /* Efeito neon no título */
+      font-weight: 700; /* Negrito da fonte Montserrat */
     }
 
+    /* Estilos para as seções 'fluxo' inspirados na 'section' do exemplo */
     .fluxo {
-      background-color: #1a1a1a;
-      margin: 20px;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+      padding: 2rem 1.5rem 3rem;
+      max-width: 800px;
+      margin: 1rem auto;
+      border: 2px solid #66ccff; /* Borda neon */
+      border-radius: 16px;
+      background: rgba(0, 17, 34, 0.6); /* Fundo semi-transparente escuro */
+      box-shadow: 0 0 30px #66ccff, 0 0 60px #3399ffaa; /* Brilho neon intenso */
+      backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+      color: #99ccff; /* Cor do texto dentro das caixas */
     }
 
     .fluxo h2 {
-      color: #00ffff;
+      color: #66ccff; /* Azul neon para subtítulos */
       font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px #3399ff; /* Efeito neon */
+      font-weight: 700;
     }
 
     .fluxo p {
@@ -59,34 +74,47 @@
     }
 
     .destaque {
-      color: #00ffff;
+      color: #00ffff; /* Um neon ligeiramente diferente para destaques internos */
       font-weight: bold;
+      text-shadow: 0 0 3px #00ffff; /* Pequeno brilho para o destaque */
     }
 
+    /* Estilos para o botão CTA inspirados no 'link' do exemplo */
     .cta-button {
-      background-color: #00ffff;
-      color: #0d0d0d;
-      padding: 15px 30px;
-      border-radius: 8px;
+      display: block;
+      background: rgba(102, 204, 255, 0.1); /* Fundo semi-transparente do botão */
+      color: #66ccff; /* Texto neon do botão */
+      padding: 14px 20px;
+      margin: 15px auto;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
-      display: inline-block; /* Para centralizar o botão com text-align */
-      margin-top: 25px;
+      border: 2px solid #66ccff; /* Borda neon do botão */
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 700;
+      font-size: 18px;
+      max-width: 300px;
+      backdrop-filter: blur(5px); /* Efeito de vidro fosco no botão */
+      cursor: pointer;
+      box-shadow: 0 0 10px #66ccff; /* Brilho neon no botão */
+      text-align: center;
     }
 
     .cta-button:hover {
-      background-color: #00ccff; /* Um azul um pouco mais escuro ao passar o mouse */
+      background: #66ccff; /* Inverte as cores ao passar o mouse */
+      color: #001122; /* Cor do texto no hover */
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #66ccffcc; /* Brilho maior no hover */
     }
 
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #88aabb; /* Cor do rodapé ligeiramente esmaecida */
+      text-shadow: 0 0 5px #3399ff88; /* Brilho sutil no rodapé */
     }
 
+    /* Media queries do exemplo para responsividade */
     @media (max-width: 768px) {
       header img {
         max-width: 90%;
@@ -94,14 +122,25 @@
       h1 {
         font-size: 1.8rem;
       }
+      .fluxo {
+        padding: 1.5rem 1rem;
+      }
+      .fluxo h2 {
+        font-size: 1.4rem;
+      }
+      .cta-button {
+        font-size: 1.1rem;
+        padding: 1rem 1.2rem;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="file_000000007794622fb779070bc1abd3c6.png" alt="Mascote HiperBoot" />
+    <img src="http://googleusercontent.com/generated_image_content/0" alt="Mascote robô do HiperBoot" />
     <h1>HiperBoot 🤖</h1>
-    </header>
+  </header>
 
   <div class="fluxo">
     <h2>🚀 Como funciona o HiperBoot?</h2>
@@ -109,7 +148,7 @@
       <li>1. Cliente chama o HiperBoot pelo WhatsApp.</li>
       <li>2. O bot mostra os <span class="destaque">produtos disponíveis</span> e gera o Pix.</li>
       <li>3. O cliente envia o <span class="destaque">comprovante</span>.</li>
-      <li>4. O HiperBoot verifica a veracidade via <span class="destaque">API bancária</span>, garantindo **segurança e agilidade**.</li>
+      <li>4. O HiperBoot verifica a veracidade via <span class="destaque">API bancária</span>, garantindo <span class="destaque">segurança e agilidade</span>.</li>
       <li>5. Se confirmado, o bot:
         <ul>
           <li>🛵 Aciona motoboy/Uber de confiança com endereço para retirada e entrega.</li>
@@ -138,7 +177,7 @@
       <li>✅ Confirmação de Pix com API bancária</li>
       <li>✅ Integração com entregas físicas e digitais</li>
       <li>✅ Redução de erros e ganho de tempo</li>
-      <li>✅ **Redução de custos operacionais**</li>
+      <li>✅ <span class="destaque">Redução de custos operacionais</span></li>
       <li>✅ Ideal para e-commerce, autônomos e serviços locais</li>
     </ul>
   </div>
@@ -155,4 +194,5 @@
     HiperBoot &copy; 2025 – Soluções inteligentes e automatizadas.
   </footer>
 </body>
-</html>
+        </html>
+        
