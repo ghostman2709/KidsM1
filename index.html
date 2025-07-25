@@ -3,115 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Compra e Venda de Cripto - P2P Seguro</title>
+  <meta name="color-scheme" content="dark light" />
+  <title>Trocas P2P Cripto Seguras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 0;
-      background: #000;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #000814, #001f3f);
+      color: #99ccff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      padding: 30px 20px;
-      background: #0f0f0f;
+      padding: 30px 15px;
       text-align: center;
-      border-bottom: 2px solid #00ffff;
     }
 
-    header h1 {
-      color: #00ffff;
-      font-size: 2em;
-      text-shadow: 0 0 10px #00ffff;
+    h1 {
+      font-size: 2.4rem;
+      color: #66ccff;
+      margin: 20px 0 10px;
+      text-shadow: 0 0 12px #00ffff;
+      font-weight: 700;
     }
 
-    section {
-      padding: 40px 20px;
+    .slogan-header {
+      font-size: 1.1rem;
+      color: #66ccff;
+      margin-top: -10px;
+      text-shadow: 0 0 5px #00ffff88;
+      font-weight: 500;
+    }
+
+    .fluxo {
+      padding: 2rem 1.5rem 3rem;
       max-width: 800px;
-      margin: auto;
+      margin: 1rem auto;
+      border: 2px solid #66ccff;
+      border-radius: 16px;
+      background: rgba(0, 17, 34, 0.6);
+      box-shadow: 0 0 30px #00ffff88, 0 0 60px #00ffff44;
+      backdrop-filter: blur(5px);
+      color: #ccddff;
     }
 
-    .neon-title {
-      color: #39ff14;
-      font-size: 1.6em;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px #39ff14;
+    .fluxo h2 {
+      color: #66ccff;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px #00ffffaa;
+      font-weight: 700;
     }
 
-    .neon-paragraph {
-      font-size: 1.1em;
-      line-height: 1.6em;
-      color: #ccc;
+    .fluxo p {
+      font-size: 1rem;
+      margin-bottom: 12px;
     }
 
-    .highlight {
+    .etapas {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    .etapas li {
+      margin-bottom: 12px;
+    }
+
+    .destaque {
       color: #00ffff;
       font-weight: bold;
+      text-shadow: 0 0 3px #00ffff;
     }
 
-    .contact {
-      background: #111;
-      border: 1px solid #00ffff;
-      border-radius: 10px;
-      padding: 20px;
-      margin-top: 30px;
+    .cta-button {
+      display: block;
+      background: rgba(102, 204, 255, 0.1);
+      color: #66ccff;
+      padding: 14px 20px;
+      margin: 15px auto;
+      text-decoration: none;
+      border: 2px solid #66ccff;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 700;
+      font-size: 18px;
+      max-width: 300px;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+      box-shadow: 0 0 10px #66ccff;
       text-align: center;
     }
 
-    .contact a {
-      color: #39ff14;
-      text-decoration: none;
-      font-size: 1.2em;
+    .cta-button:hover {
+      background: #66ccff;
+      color: #001122;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #66ccffcc;
     }
 
     footer {
-      padding: 20px;
       text-align: center;
-      color: #555;
-      border-top: 1px solid #222;
-      margin-top: 40px;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #88aabb;
+      text-shadow: 0 0 5px #3399ff88;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      .fluxo { padding: 1.5rem 1rem; }
+      .fluxo h2 { font-size: 1.4rem; }
+      .cta-button { font-size: 1.1rem; padding: 1rem 1.2rem; max-width: 100%; }
+    }
+
+    .fade-in-element {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-element.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>💱 P2P Cripto Seguro & Privado</h1>
-    <p class="highlight">Compra e venda de Bitcoin (BTC) e USDT direto na sua conta.</p>
+  <header class="fade-in-element">
+    <h1>P2P Cripto 🔐</h1>
+    <p class="slogan-header">Compra e Venda de BTC & USDT com Segurança, Privacidade e Rapidez</p>
   </header>
 
-  <section>
-    <h2 class="neon-title">🔐 O que é P2P?</h2>
-    <p class="neon-paragraph">
-      P2P significa <span class="highlight">"Peer-to-Peer"</span>, ou seja, uma negociação direta entre pessoas — sem intermediários como exchanges. É uma forma <span class="highlight">mais rápida, privada e personalizada</span> de comprar ou vender criptomoedas.
+  <div class="fluxo fade-in-element">
+    <h2>💡 O que é P2P Cripto?</h2>
+    <p><span class="destaque">P2P</span> significa troca direta entre pessoas, sem precisar de uma corretora. Você negocia comigo diretamente e recebe ou envia suas criptos com sigilo e agilidade.</p>
+    <p>Eu compro e vendo <span class="destaque">Bitcoin (BTC)</span> e <span class="destaque">USDT</span> com pagamento em <span class="destaque">Reais (BRL)</span> ou <span class="destaque">Pesos</span>, direto na conta bancária ou por Pix.</p>
+  </div>
+
+  <div class="fluxo fade-in-element">
+    <h2>✅ Por que fazer P2P comigo?</h2>
+    <ul class="etapas">
+      <li>🔒 <span class="destaque">Privacidade Total:</span> Sem intermediários, sem registros públicos.</li>
+      <li>⚡ <span class="destaque">Transferência Rápida:</span> Pix ou transferência em poucos minutos.</li>
+      <li>🤝 <span class="destaque">Confiança:</span> Atendimento direto, transparente e com histórico real de clientes.</li>
+      <li>📲 <span class="destaque">Acesso Fácil:</span> Negocie direto pelo WhatsApp com rapidez.</li>
+    </ul>
+  </div>
+
+  <div class="fluxo fade-in-element">
+    <h2>🔁 Como funciona a troca?</h2>
+    <ul class="etapas">
+      <li>1. Você entra em contato e diz o valor ou a quantia em cripto.</li>
+      <li>2. Eu envio os dados bancários (Pix ou conta).</li>
+      <li>3. Após o pagamento confirmado, você recebe o BTC ou USDT na sua carteira.</li>
+      <li>4. Para vender, você envia a cripto e recebe o valor na sua conta.</li>
+    </ul>
+    <p>Simples, seguro e rápido!</p>
+  </div>
+
+  <div class="fluxo fade-in-element">
+    <h2>📞 Fale Agora e Negocie com Confiança</h2>
+    <p style="text-align: center;">
+      <a href="https://wa.me/55SEUNUMERO" target="_blank" class="cta-button">Negociar via WhatsApp</a>
     </p>
+    <p style="text-align: center;">Disponível todos os dias | Atendimento rápido e discreto</p>
+  </div>
 
-    <h2 class="neon-title">🚀 O que eu ofereço?</h2>
-    <p class="neon-paragraph">
-      🔸 Compro e vendo <span class="highlight">Bitcoin (BTC)</span> e <span class="highlight">USDT</span>.<br/>
-      🔸 Pagamento direto em <span class="highlight">reais (BRL)</span> ou <span class="highlight">pesos</span>, via Pix ou transferência bancária.<br/>
-      🔸 Atendimento 100% <span class="highlight">seguro, privado e confiável</span>.<br/>
-      🔸 Negociação rápida, sem burocracia, com sigilo total.
-    </p>
-
-    <h2 class="neon-title">💡 Por que confiar?</h2>
-    <p class="neon-paragraph">
-      ✔️ Atendimento personalizado<br/>
-      ✔️ Experiência real no mercado cripto<br/>
-      ✔️ Nenhuma complicação, apenas confiança e eficiência
-    </p>
-
-    <div class="contact">
-      <p class="neon-title">📲 Fale comigo agora</p>
-      <a href="https://wa.me/55SEUNUMERO" target="_blank">👉 Clique aqui para negociar via WhatsApp</a><br/><br/>
-      <span style="color:#ccc">Disponível todos os dias | Resposta rápida</span>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 – Seu Nome P2P | Transações Privadas e Confiáveis
+  <footer class="fade-in-element">
+    © 2025 – P2P Cripto | Confiabilidade e Privacidade em Cada Transação
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in-element');
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
 </body>
 </html>
