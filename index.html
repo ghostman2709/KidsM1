@@ -4,362 +4,194 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <meta name="description" content="Hiperfoco: Descubra o método de 10 minutos por dia para transformar sua mente, alcançar foco total e desbloquear uma vida de produtividade e clareza.">
-  <meta property="og:title" content="Hiperfoco: Transforme Sua Mente, Alcance Foco Total em 10 Minutos por Dia – Comece Hoje!">
-  <meta property="og:description" content="O método Hiperfoco oferece 20 capítulos práticos e áudios com frequências mentais para revolucionar sua atenção e produtividade.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ghostman2709.github.io/hyperfoco-/">
-  <meta name="theme-color" content="#001122" />
-  <title>Hiperfoco – Foco Total em 10 Minutos</title>
-  <link rel="icon" href="https://emojiapi.dev/api/v1/fire/64.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Hiperfoco – Links Essenciais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #001122, #002244);
-      color: #66ccff; /* Cor principal dos textos */
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      padding: 2rem 1rem 1rem;
+      background-size: 400% 400%;
+      animation: gradientMove 20s ease infinite;
+      color: #66ccff;
       text-align: center;
+      padding: clamp(20px, 5vw, 60px);
+      animation: fadeIn 1.2s ease-out;
     }
 
-    header h1 {
-      font-size: 2.5rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
       color: #66ccff;
-      margin: 0;
-      text-shadow: 0 0 12px #3399ffcc;
+      text-shadow: 0 0 12px #3399ff;
       font-weight: 700;
     }
 
-    header p {
-      font-size: 1.2rem;
-      color: #99ccff; /* Cor do subtítulo do header */
-      margin-top: 0.5rem;
-      text-shadow: 0 0 8px #3399ff99;
-      font-weight: 600;
-    }
-
-    .audio-controls {
-      margin-top: 1rem;
-    }
-
-    .audio-button {
-      background: rgba(102, 204, 255, 0.1);
-      border: 2px solid #66ccff;
-      color: #66ccff;
-      padding: 0.6rem 1.2rem;
-      margin: 0.5rem;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-    }
-
-    .audio-button:hover {
-      background: #66ccff;
-      color: #001122;
-      transform: scale(1.05);
-    }
-
-    #trackName {
-      margin-top: 0.5rem;
+    .desc {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
       color: #aaccee;
-      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
     }
 
     .section {
-      padding: 2rem 1.5rem 3rem;
-      max-width: 800px;
-      margin: 1rem auto;
-      border: 2px solid #66ccff;
-      border-radius: 16px;
-      background: rgba(0, 17, 34, 0.6);
-      box-shadow: 0 0 30px #66ccff, 0 0 60px #3399ffaa;
+      margin-bottom: 30px;
     }
 
     .section h2 {
+      font-size: 1.4rem;
       color: #66ccff;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 5px #3399ff;
-      font-weight: 700;
+      text-shadow: 0 0 6px #3399ff;
+      margin-bottom: 12px;
     }
 
-    .quote {
-      font-style: italic;
-      color: #aaccee;
-      margin: 2rem 0;
-      text-align: center; /* Centraliza a citação */
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-
-    li::before {
-      content: "✓ ";
+    .link {
+      display: block;
+      background: rgba(102, 204, 255, 0.08);
       color: #66ccff;
+      padding: 12px 20px;
+      margin: 10px auto;
+      text-decoration: none;
+      border: 2px solid #66ccff;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease-in-out;
+      max-width: 500px;
+      box-shadow: inset 0 0 10px #66ccff22, 0 0 10px #66ccff44;
+    }
+
+    .link:hover {
+      background: #66ccff;
+      color: #001122;
+      transform: scale(1.04) rotate(0.3deg);
+    }
+
+    .btn-audio {
+      margin: 25px auto 40px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #001122;
+      background-color: #66ccff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      max-width: 280px;
+      box-shadow: 0 0 15px #66ccff55, 0 0 30px #66ccff22;
+    }
+
+    .btn-audio:hover {
+      background-color: #3399ff;
+      transform: scale(1.05);
+    }
+
+    .logo {
+      width: 60px;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+
+    .topo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #66ccff;
+      color: #001122;
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      box-shadow: 0 0 12px #66ccff88;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .topo:hover {
+      transform: scale(1.1);
     }
 
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
+      margin-top: 50px;
       font-size: 0.9rem;
       color: #88aabb;
-      text-shadow: 0 0 5px #3399ff88;
-    }
-
-    /* Estilos do botão de acesso (VERMELHO NEON E MAIOR) */
-    .access-link {
-      display: inline-block;
-      background: rgba(255, 0, 127, 0.1); /* Fundo sutil com transparência para o vermelho neon */
-      color: #FF007F; /* Cor principal do texto em vermelho neon */
-      padding: 1.2rem 2.5rem; /* Aumentado o padding para deixar a caixa maior */
-      font-weight: 700;
-      font-size: 1.4rem; /* Fonte ligeiramente maior */
-      text-decoration: none;
-      border: 2px solid #FF007F; /* Borda em vermelho neon */
-      border-radius: 12px;
-      box-shadow: 0 0 20px #FF007Fcc; /* Brilho neon vermelho */
-      transition: all 0.3s ease;
-      margin-top: 3rem;
-    }
-
-    .access-link:hover {
-      background: #FF007F; /* Fundo vermelho neon no hover */
-      color: #001122; /* Texto escuro no hover para contraste */
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #FF007Fdd; /* Brilho mais intenso no hover */
-    }
-
-    .vip-benefits {
-      background: rgba(0, 18, 34, 0.8);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 3rem;
-      color: #bbddff;
-      box-shadow: 0 0 10px #3399ff;
-    }
-
-    .vip-benefits h3 {
-      color: #66ccff;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .vip-benefits li::before {
-      content: "✔️ ";
-      color: #66ccff;
-    }
-
-    /* Estilos para Depoimentos */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: 1fr; /* Uma coluna por padrão */
-      gap: 20px; /* Espaço entre os depoimentos */
-      margin-top: 2rem;
-    }
-
-    .testimonial-item {
-      background: rgba(0, 18, 34, 0.7); /* Fundo um pouco mais escuro para destaque */
-      border: 1px solid #3399ff; /* Borda suave */
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 0 15px rgba(51, 153, 255, 0.3); /* Brilho sutil */
-    }
-
-    .testimonial-item .quote {
-      font-size: 1rem;
-      color: #cceeff; /* Cor do texto do depoimento */
-      margin-bottom: 1rem;
-      font-style: italic;
-      text-align: center; /* Centraliza a citação */
-      text-shadow: none; /* Remove text-shadow do quote padrão */
-    }
-
-    .testimonial-item .author {
-      font-size: 0.9rem;
-      color: #66ccff; /* Cor do nome do autor */
-      text-align: right;
-      font-weight: bold;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-    }
-
-    .fade-in.appear {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Media Queries */
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .section h2 {
-        font-size: 1.4rem;
-      }
-      .access-link {
-        font-size: 1.1rem; /* Ajustado para telas menores */
-        padding: 1rem 1.5rem; /* Ajustado para telas menores */
-      }
-      .testimonial-item {
-        padding: 1rem;
-      }
-      .testimonial-item .quote {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .testimonial-grid {
-        grid-template-columns: 1fr 1fr; /* Duas colunas em telas maiores */
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .testimonial-grid {
-        grid-template-columns: 1fr 1fr 1fr; /* Três colunas em telas ainda maiores */
-      }
+      text-shadow: 0 0 4px #2277cc;
     }
   </style>
 </head>
 <body>
 
-<header class="fade-in">
-  <h1>Hiperfoco</h1>
-  <p>10 minutos por dia que podem transformar sua mente, seu foco e sua vida.</p>
+  <img src="logo.png" alt="Logo Hiperfoco" class="logo" />
 
-  <div class="audio-controls fade-in">
-    <button id="audioControl" class="audio-button">Ativar Trilha Sonora 🎧</button>
-    <div id="trackName"></div>
-    <audio id="bgAudio" preload="auto" loop src="audio3.mp3"></audio>
+  <h1><i class="fas fa-rocket"></i> Hiperfoco</h1>
+  <p class="desc">Links essenciais para impulsionar sua mente, negócio e liberdade digital.</p>
+
+  <button class="btn-audio" id="btnAudio"><i class="fas fa-headphones-alt"></i> Ativar Trilha Binaural</button>
+
+  <div class="section">
+    <h2><i class="fas fa-book"></i> Livro Hiperfoco</h2>
+    <a class="link" href="https://ghostman2709.github.io/Index/" target="_blank">
+      Hiperfoco – O Poder de 10 Minutos por Dia
+    </a>
   </div>
-</header>
 
-<div class="section fade-in">
-  <h2>📘 20 Capítulos: Transforme Sua Mente e Alcance o Foco Pleno!</h2>
-  <p>Este não é apenas um Ebook. É um método comprovado para **reprogramar** sua mente e sua forma de viver, pensar e agir.</p>
-  <p class="quote">"A vida que você vive é o reflexo dos pensamentos que você cultiva."<br>— James Allen</p>
-
-  <h2>🎧 Trilha Sonora do Foco</h2>
-  <p>Ative o som enquanto lê. Nossas frequências exclusivas aumentam seu estado de presença, clareza mental e concentração profunda.</p>
-
-  <h2>📘 O Que Você Vai Desbloquear:</h2>
-  <ul>
-    <li>20 capítulos transformadores para domínio mental</li>
-    <li>Exercícios práticos diários para integrar o aprendizado</li>
-    <li>Áudios exclusivos com frequências binaurais para otimizar o foco</li>
-    <li>Frases inspiradoras que despertam ação imediata</li>
-    <li>Acesso privilegiado ao Grupo VIP para suporte e conteúdo extra</li>
-  </ul>
-
-  <div class="vip-benefits">
-    <h3>Benefícios Exclusivos do Grupo VIP</h3>
-    <ul>
-      <li>Acesso ilimitado a uma vasta biblioteca de livros em PDF</li>
-      <li>Centenas de audiobooks completos para aprendizado em movimento</li>
-      <li>Conteúdo e temas avançados exclusivos para membros</li>
-      <li>Faça parte de uma comunidade ativa e de alto desempenho</li>
-      <li>Desafios e exercícios práticos exclusivos para aprofundamento</li>
-      <li>**Oportunidade Única:** Assine o próximo capítulo com seu nome como coautor!</li>
-    </ul>
+  <div class="section">
+    <h2><i class="fas fa-robot"></i> HiperBoot – WhatsApp de Vendas</h2>
+    <a class="link" href="https://ghostman2709.github.io/HiperBoot/" target="_blank">
+      Transforme seu WhatsApp em uma máquina de vendas automática
+    </a>
   </div>
-</div>
 
-<div class="section fade-in">
-  <h2>🌟 O Que Nossos Leitores Estão Dizendo:</h2>
-  <div class="testimonial-grid">
-    <div class="testimonial-item">
-      <p class="quote">"O Hiperfoco mudou minha rotina! Apenas 10 minutos por dia e sinto uma clareza mental que nunca tive. Realmente funciona!"</p>
-      <p class="author">— Ana C., Estudante</p>
-    </div>
-    <div class="testimonial-item">
-      <p class="quote">"Eu era muito disperso, mas o método do Hiperfoco me deu as ferramentas para focar de verdade. Meus resultados no trabalho melhoraram muito!"</p>
-      <p class="author">— João P., Empreendedor</p>
-    </div>
-    <div class="testimonial-item">
-      <p class="quote">"As trilhas sonoras são incríveis e os exercícios são práticos. Estou muito mais produtivo e menos ansioso. Recomendo a todos!"</p>
-      <p class="author">— Maria S., Profissional Liberal</p>
-    </div>
-     <div class="testimonial-item">
-      <p class="quote">"Sempre tive dificuldade em manter o foco, mas com o Hiperfoco, percebi uma melhora drástica. A metodologia é simples e eficaz!"</p>
-      <p class="author">— Pedro R., Desenvolvedor</p>
-    </div>
-    <div class="testimonial-item">
-      <p class="quote">"Um investimento que vale cada centavo! O acesso ao grupo VIP é um bônus que me trouxe ainda mais conhecimento e motivação."</p>
-      <p class="author">— Carla D., Gerente de Projetos</p>
-    </div>
+  <div class="section">
+    <h2><i class="fas fa-key"></i> BTC Memory System</h2>
+    <a class="link" href="https://ghostman2709.github.io/btc-memoria/" target="_blank">
+      Memorize 12 palavras e proteja seus investimentos
+    </a>
   </div>
-</div>
 
-<div class="section fade-in" style="text-align: center;">
-  <h2>Pronto para Transformar Seu Foco e Sua Vida?</h2>
-  <p>Milhares de pessoas já estão colhendo os benefícios do Hiperfoco. Não espere mais para desbloquear seu potencial máximo!</p>
-  <a href="https://ghostman2709.github.io/hyperfoco-/" target="_blank" class="access-link" rel="noopener noreferrer">
-    👉 Desbloqueie Seu Foco AGORA!
-  </a>
-</div>
+  <audio id="audioBinaural" src="binaural.mp3" loop preload="auto"></audio>
 
-<footer class="fade-in">
-  © 2025 Projeto Hiperfoco. Todos os direitos reservados.
-</footer>
+  <footer>
+    © 2025 Projeto Hiperfoco – Criado por Érico Mendieta
+  </footer>
 
-<script>
-  const audio = document.getElementById('bgAudio');
-  const playBtn = document.getElementById('audioControl');
-  const trackName = document.getElementById('trackName');
+  <a href="#top" class="topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></a>
 
-  const track = {
-    name: 'Clareza Mental',
-    file: 'audio3.mp3'
-  };
+  <script>
+    const btnAudio = document.getElementById('btnAudio');
+    const audio = document.getElementById('audioBinaural');
+    let isPlaying = false;
 
-  let isPlaying = false;
-
-  playBtn.addEventListener('click', () => {
-    if (!isPlaying) {
-      audio.play();
-      isPlaying = true;
-      playBtn.textContent = '⏸️ Pausar Trilha Sonora';
-      trackName.textContent = `🎵 Tocando agora: ${track.name}`;
-    } else {
-      audio.pause();
-      isPlaying = false;
-      playBtn.textContent = '▶️ Reproduzir Trilha Sonora';
-      trackName.textContent = '';
-    }
-  });
-
-  const fadeIns = document.querySelectorAll('.fade-in');
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
+    btnAudio.addEventListener('click', () => {
+      if (!isPlaying) {
+        audio.play();
+        btnAudio.innerHTML = '<i class="fas fa-pause"></i> Parar Trilha Binaural';
+        isPlaying = true;
+      } else {
+        audio.pause();
+        btnAudio.innerHTML = '<i class="fas fa-headphones-alt"></i> Ativar Trilha Binaural';
+        isPlaying = false;
       }
     });
-  }, { threshold: 0.1 });
-
-  fadeIns.forEach(el => appearOnScroll.observe(el));
-</script>
+  </script>
 
 </body>
-  </html>
-  
+          </html>
