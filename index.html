@@ -3,195 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Hiperfoco – Links Essenciais</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Compra e Venda de Cripto - P2P Seguro</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #001122, #002244);
-      background-size: 400% 400%;
-      animation: gradientMove 20s ease infinite;
-      color: #66ccff;
+      padding: 0;
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    header {
+      padding: 30px 20px;
+      background: #0f0f0f;
       text-align: center;
-      padding: clamp(20px, 5vw, 60px);
-      animation: fadeIn 1.2s ease-out;
+      border-bottom: 2px solid #00ffff;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+    header h1 {
+      color: #00ffff;
+      font-size: 2em;
+      text-shadow: 0 0 10px #00ffff;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
-    h1 {
-      font-size: 2.4rem;
+    .neon-title {
+      color: #39ff14;
+      font-size: 1.6em;
       margin-bottom: 10px;
-      color: #66ccff;
-      text-shadow: 0 0 12px #3399ff;
-      font-weight: 700;
+      text-shadow: 0 0 10px #39ff14;
     }
 
-    .desc {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      color: #aaccee;
-      letter-spacing: 0.5px;
-      line-height: 1.5;
+    .neon-paragraph {
+      font-size: 1.1em;
+      line-height: 1.6em;
+      color: #ccc;
     }
 
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .section h2 {
-      font-size: 1.4rem;
-      color: #66ccff;
-      text-shadow: 0 0 6px #3399ff;
-      margin-bottom: 12px;
-    }
-
-    .link {
-      display: block;
-      background: rgba(102, 204, 255, 0.08);
-      color: #66ccff;
-      padding: 12px 20px;
-      margin: 10px auto;
-      text-decoration: none;
-      border: 2px solid #66ccff;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1rem;
-      backdrop-filter: blur(5px);
-      transition: all 0.3s ease-in-out;
-      max-width: 500px;
-      box-shadow: inset 0 0 10px #66ccff22, 0 0 10px #66ccff44;
-    }
-
-    .link:hover {
-      background: #66ccff;
-      color: #001122;
-      transform: scale(1.04) rotate(0.3deg);
-    }
-
-    .btn-audio {
-      margin: 25px auto 40px;
-      padding: 12px 24px;
-      font-size: 1rem;
+    .highlight {
+      color: #00ffff;
       font-weight: bold;
-      color: #001122;
-      background-color: #66ccff;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      max-width: 280px;
-      box-shadow: 0 0 15px #66ccff55, 0 0 30px #66ccff22;
     }
 
-    .btn-audio:hover {
-      background-color: #3399ff;
-      transform: scale(1.05);
+    .contact {
+      background: #111;
+      border: 1px solid #00ffff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
     }
 
-    .logo {
-      width: 60px;
-      margin-bottom: 15px;
-      opacity: 0.9;
-    }
-
-    .topo {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #66ccff;
-      color: #001122;
-      padding: 10px 14px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      box-shadow: 0 0 12px #66ccff88;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .topo:hover {
-      transform: scale(1.1);
+    .contact a {
+      color: #39ff14;
+      text-decoration: none;
+      font-size: 1.2em;
     }
 
     footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #88aabb;
-      text-shadow: 0 0 4px #2277cc;
+      padding: 20px;
+      text-align: center;
+      color: #555;
+      border-top: 1px solid #222;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <img src="logo.png" alt="Logo Hiperfoco" class="logo" />
+  <header>
+    <h1>💱 P2P Cripto Seguro & Privado</h1>
+    <p class="highlight">Compra e venda de Bitcoin (BTC) e USDT direto na sua conta.</p>
+  </header>
 
-  <h1><i class="fas fa-rocket"></i> Hiperfoco</h1>
-  <p class="desc">Links essenciais para impulsionar sua mente, negócio e liberdade digital.</p>
+  <section>
+    <h2 class="neon-title">🔐 O que é P2P?</h2>
+    <p class="neon-paragraph">
+      P2P significa <span class="highlight">"Peer-to-Peer"</span>, ou seja, uma negociação direta entre pessoas — sem intermediários como exchanges. É uma forma <span class="highlight">mais rápida, privada e personalizada</span> de comprar ou vender criptomoedas.
+    </p>
 
-  <button class="btn-audio" id="btnAudio"><i class="fas fa-headphones-alt"></i> Ativar Trilha Binaural</button>
+    <h2 class="neon-title">🚀 O que eu ofereço?</h2>
+    <p class="neon-paragraph">
+      🔸 Compro e vendo <span class="highlight">Bitcoin (BTC)</span> e <span class="highlight">USDT</span>.<br/>
+      🔸 Pagamento direto em <span class="highlight">reais (BRL)</span> ou <span class="highlight">pesos</span>, via Pix ou transferência bancária.<br/>
+      🔸 Atendimento 100% <span class="highlight">seguro, privado e confiável</span>.<br/>
+      🔸 Negociação rápida, sem burocracia, com sigilo total.
+    </p>
 
-  <div class="section">
-    <h2><i class="fas fa-book"></i> Livro Hiperfoco</h2>
-    <a class="link" href="https://ghostman2709.github.io/Index/" target="_blank">
-      Hiperfoco – O Poder de 10 Minutos por Dia
-    </a>
-  </div>
+    <h2 class="neon-title">💡 Por que confiar?</h2>
+    <p class="neon-paragraph">
+      ✔️ Atendimento personalizado<br/>
+      ✔️ Experiência real no mercado cripto<br/>
+      ✔️ Nenhuma complicação, apenas confiança e eficiência
+    </p>
 
-  <div class="section">
-    <h2><i class="fas fa-robot"></i> HiperBoot – WhatsApp de Vendas</h2>
-    <a class="link" href="https://ghostman2709.github.io/HiperBoot/" target="_blank">
-      Transforme seu WhatsApp em uma máquina de vendas automática
-    </a>
-  </div>
-
-  <div class="section">
-    <h2><i class="fas fa-key"></i> BTC Memory System</h2>
-    <a class="link" href="https://ghostman2709.github.io/btc-memoria/" target="_blank">
-      Memorize 12 palavras e proteja seus investimentos
-    </a>
-  </div>
-
-  <audio id="audioBinaural" src="binaural.mp3" loop preload="auto"></audio>
+    <div class="contact">
+      <p class="neon-title">📲 Fale comigo agora</p>
+      <a href="https://wa.me/55SEUNUMERO" target="_blank">👉 Clique aqui para negociar via WhatsApp</a><br/><br/>
+      <span style="color:#ccc">Disponível todos os dias | Resposta rápida</span>
+    </div>
+  </section>
 
   <footer>
-    © 2025 Projeto Hiperfoco – Criado por Érico Mendieta
+    © 2025 – Seu Nome P2P | Transações Privadas e Confiáveis
   </footer>
 
-  <a href="#top" class="topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></a>
-
-  <script>
-    const btnAudio = document.getElementById('btnAudio');
-    const audio = document.getElementById('audioBinaural');
-    let isPlaying = false;
-
-    btnAudio.addEventListener('click', () => {
-      if (!isPlaying) {
-        audio.play();
-        btnAudio.innerHTML = '<i class="fas fa-pause"></i> Parar Trilha Binaural';
-        isPlaying = true;
-      } else {
-        audio.pause();
-        btnAudio.innerHTML = '<i class="fas fa-headphones-alt"></i> Ativar Trilha Binaural';
-        isPlaying = false;
-      }
-    });
-  </script>
-
 </body>
-          </html>
+</html>
