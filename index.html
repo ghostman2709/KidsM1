@@ -1,175 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Hiper-Sorte 🎯</title>
-
-  <!-- Font Montserrat e Font Awesome para ícones -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiper Sorteio</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #001122, #002244);
-      color: #99ccff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      padding-top: 80px;
-    }
-
-    /* MENU */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 17, 34, 0.8);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 20px #66ccff80;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #66ccff;
-      text-shadow: 0 0 10px #3399ffcc;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: #99ccff;
-      text-decoration: none;
-      font-size: 0.9rem;
+      background-color: #000814;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: color 0.3s ease;
+      justify-content: center;
+      height: 100vh;
     }
 
-    nav ul li a:hover {
-      color: #00ffff;
-    }
-
-    /* CONTEÚDO */
-    main {
+    .card {
+      background-color: #001d3d;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 16px rgba(0, 255, 255, 0.2);
+      max-width: 420px;
+      width: 90%;
       text-align: center;
-      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      color: #66ccff;
-      text-shadow: 0 0 12px #3399ffcc;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #bbddff;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: rgba(102, 204, 255, 0.1);
-      color: #66ccff;
-      padding: 14px 25px;
-      border: 2px solid #66ccff;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
+    .card p {
       font-size: 1rem;
-      box-shadow: 0 0 12px #66ccff;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(4px);
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .cta-button:hover {
-      background: #66ccff;
-      color: #001122;
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #66ccff;
+    .card small {
+      color: #aaa;
+      font-size: 0.85rem;
     }
 
-    .footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #88aabb;
-      margin-top: 40px;
-      padding: 20px;
-      text-shadow: 0 0 5px #3399ff88;
+    .button-whatsapp {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #00ffcc, #00bfff);
+      color: #000814;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
 
-    @media (max-width: 768px) {
-      .logo {
-        font-size: 1.2rem;
-      }
+    .button-whatsapp:hover {
+      background: linear-gradient(45deg, #00bfff, #00ffcc);
+    }
 
-      nav ul {
-        gap: 12px;
-      }
+    .info {
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
 
-      nav ul li a {
-        font-size: 0.8rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .cta-button {
-        font-size: 0.95rem;
-        padding: 12px 20px;
-      }
+    .info strong {
+      color: #00ffcc;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">🎯 Hiper-Sorte</div>
-    <nav>
-      <ul>
-        <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
-        <li><a href="#"><i class="fas fa-ticket-alt"></i> Sorteio</a></li>
-        <li><a href="#"><i class="fas fa-wallet"></i> Pix</a></li>
-        <li><a href="https://wa.me/5555996043937?text=sorte" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-        <li><a href="#"><i class="fas fa-info-circle"></i> Regras</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <h1>Participe do Sorteio Agora!</h1>
+  <div class="card">
     <p>
-      Envie a palavra <strong class="destaque">"sorte"</strong> no WhatsApp, faça o pagamento via <strong>Pix</strong> e receba seu <strong>ID da sorte</strong> exclusivo.<br><br>
-      <em>O ID será gerado automaticamente após a confirmação do pagamento.</em>
+      📲 Envie a palavra <strong>"sorte"</strong> no WhatsApp.<br/>
+      💸 Faça o pagamento via <strong>Pix</strong>.<br/>
+      🎟️ Receba seu <strong>ID da sorte</strong> exclusivo.<br/>
+      <small>(Gerado automaticamente após confirmação do pagamento)</small>
     </p>
-    <a class="cta-button" href="https://wa.me/5555996043937?text=sorte" target="_blank">
-      Participar via WhatsApp
+
+    <a href="https://wa.me/5555996043937?text=sorte" target="_blank" class="button-whatsapp">
+      💬 Participar via WhatsApp
     </a>
-    <div class="footer">🎁 Prêmio: R$200,00 &nbsp; | &nbsp; Ticket: R$10,00</div>
-  </main>
+
+    <div class="info">
+      🎁 <strong>Prêmio:</strong> R$200,00 &nbsp; | &nbsp; 💰 <strong>Ticket:</strong> R$10,00
+    </div>
+  </div>
 
 </body>
 </html>
