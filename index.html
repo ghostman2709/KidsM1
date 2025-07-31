@@ -3,98 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorteio Hiper Foco - R$100 em 24h</title>
+  <title>Sorteio Hyper Foco - R$100 via Pix</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: #0d0d0d;
-      color: #f2f2f2;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
+
     .container {
       max-width: 600px;
-      margin: auto;
-      padding: 25px;
-      background: #1a1a1a;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,255,153,0.2);
+      background: #12121c;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00cfff44;
     }
-    h1, h2, h3 {
+
+    h1 {
       text-align: center;
-      color: #00ff99;
+      color: #00cfff;
+      text-shadow: 0 0 10px #00cfff;
+      font-size: 28px;
     }
-    p, ul, ol {
-      line-height: 1.6;
+
+    h2 {
+      text-align: center;
+      color: #ffffffcc;
     }
-    ul li, ol li {
-      margin-bottom: 10px;
-    }
+
     .pix-box {
-      background: #111;
+      background: #0d0d15;
       padding: 20px;
-      border-radius: 10px;
-      font-size: 15px;
-      text-align: center;
-      margin: 20px 0;
-      border: 1px dashed #00ff99;
-    }
-    .button {
-      display: block;
-      text-align: center;
-      background: #00ff99;
-      color: #000;
-      padding: 15px;
       border-radius: 12px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 16px;
-      margin: 25px 0;
-      transition: 0.3s ease;
-    }
-    .button:hover {
-      background: #00cc7a;
-    }
-    .footer {
       text-align: center;
+      border: 1px dashed #00cfff;
+      margin: 20px 0;
+    }
+
+    .button, .gen-code {
+      background: #00cfff;
+      color: #000;
+      font-weight: bold;
+      padding: 14px;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      margin: 15px 0;
+      transition: 0.3s;
+    }
+
+    .button:hover, .gen-code:hover {
+      background: #00a3cc;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    .code-box {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ffcc;
+    }
+
+    .footer {
       margin-top: 30px;
-      font-size: 14px;
-      color: #888;
+      font-size: 13px;
+      text-align: center;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>SORTEIO RELÂMPAGO</h1>
-    <h2>💰 R$100 VIA PIX</h2>
+    <h1>SORTEIO HYPER FOCO</h1>
+    <h2>💰 R$100 via Pix em 24h</h2>
 
-    <p><strong>⏳ Válido pelas próximas 24h!</strong></p>
+    <p><strong>🎯 Válido por tempo limitado</strong></p>
     <p><strong>💸 Valor da participação:</strong> R$5,00</p>
 
-    <h3>✅ Benefícios:</h3>
-    <ul>
-      <li>Desperte sua mente com propósito</li>
-      <li>Participe por apenas R$5</li>
-      <li>Receba conteúdos exclusivos de mentalidade e foco</li>
-    </ul>
-
-    <h3>🚀 Como funciona:</h3>
+    <h3>Como funciona:</h3>
     <ol>
-      <li>Chame no WhatsApp abaixo e peça a chave Pix.</li>
-      <li>Envie o Pix de R$5,00.</li>
-      <li>Receba seu número da sorte.</li>
-      <li>Espere o sorteio e torça! 🧠🔥</li>
+      <li>Clique no botão e fale comigo no WhatsApp</li>
+      <li>Receba a chave Pix segura</li>
+      <li>Envie o Pix e receba seu número da sorte</li>
     </ol>
 
     <div class="pix-box">
-      💳 Chave Pix será entregue <br><strong>diretamente no WhatsApp</strong><br> para sua segurança.
+      🔐 A chave Pix será enviada no WhatsApp por segurança.
     </div>
 
     <a class="button" href="https://wa.me/5555996043937" target="_blank">📲 Falar no WhatsApp</a>
+
+    <button class="gen-code" onclick="gerarCodigo()">🎟️ Gerar Código da Sorte</button>
+    <div id="codigo-sorte" class="code-box"></div>
 
     <div class="footer">
       “Você atrai aquilo que foca. Onde está sua atenção, ali está seu poder.”<br>— Hyper Foco
     </div>
   </div>
+
+  <script>
+    function gerarCodigo() {
+      const num = Math.floor(Math.random() * 900000 + 100000);
+      const codigo = \"HF-\" + num;
+      document.getElementById(\"codigo-sorte\").innerText = \"Seu código: \" + codigo;
+    }
+  </script>
 </body>
 </html>
