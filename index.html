@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorteio Hyper Foco - R$100 via Pix</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorteio Hyper Foco - R$100</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: #0a0a0f;
       color: #ffffff;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
     }
-
     .container {
       max-width: 600px;
-      background: #12121c;
       padding: 30px;
+      background: #12121c;
       border-radius: 20px;
-      box-shadow: 0 0 20px #00cfff44;
+      box-shadow: 0 0 20px #00cfff55;
     }
-
     h1 {
       text-align: center;
       color: #00cfff;
       text-shadow: 0 0 10px #00cfff;
-      font-size: 28px;
     }
-
     h2 {
       text-align: center;
       color: #ffffffcc;
     }
-
     .pix-box {
       background: #0d0d15;
       padding: 20px;
@@ -45,7 +40,6 @@
       border: 1px dashed #00cfff;
       margin: 20px 0;
     }
-
     .button, .gen-code {
       background: #00cfff;
       color: #000;
@@ -57,16 +51,11 @@
       display: block;
       margin: 15px 0;
       transition: 0.3s;
+      cursor: pointer;
     }
-
     .button:hover, .gen-code:hover {
       background: #00a3cc;
     }
-
-    ul, ol {
-      padding-left: 20px;
-    }
-
     .code-box {
       text-align: center;
       font-size: 20px;
@@ -75,7 +64,6 @@
       color: #00ffcc;
       text-shadow: 0 0 5px #00ffcc;
     }
-
     .footer {
       margin-top: 30px;
       font-size: 13px;
@@ -89,13 +77,13 @@
     <h1>SORTEIO HYPER FOCO</h1>
     <h2>💰 R$100 via Pix em 24h</h2>
 
-    <p><strong>🎯 Válido por tempo limitado</strong></p>
-    <p><strong>💸 Valor da participação:</strong> R$5,00</p>
+    <p><strong>⏳ Válido por tempo limitado!</strong></p>
+    <p><strong>💸 Participação:</strong> R$5,00</p>
 
-    <h3>Como funciona:</h3>
+    <h3>Como Participar:</h3>
     <ol>
       <li>Clique no botão e fale comigo no WhatsApp</li>
-      <li>Receba a chave Pix segura</li>
+      <li>Receba a chave Pix</li>
       <li>Envie o Pix e receba seu número da sorte</li>
     </ol>
 
@@ -103,7 +91,7 @@
       🔐 A chave Pix será enviada no WhatsApp por segurança.
     </div>
 
-    <a class="button" href="https://wa.me/5555996043937" target="_blank">📲 Falar no WhatsApp</a>
+    <a class="button" href="https://wa.me/5555996043937?text=sorte-hiperfoco" target="_blank">📲 Falar no WhatsApp</a>
 
     <button class="gen-code" onclick="gerarCodigo()">🎟️ Gerar Código da Sorte</button>
     <div id="codigo-sorte" class="code-box"></div>
@@ -116,8 +104,8 @@
   <script>
     function gerarCodigo() {
       const num = Math.floor(Math.random() * 900000 + 100000);
-      const codigo = \"HF-\" + num;
-      document.getElementById(\"codigo-sorte\").innerText = \"Seu código: \" + codigo;
+      const codigo = 'HF-' + num;
+      document.getElementById('codigo-sorte').innerText = 'Seu código: ' + codigo;
     }
   </script>
 </body>
