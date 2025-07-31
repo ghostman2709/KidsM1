@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hiper-Sorte</title>
+  <!-- Link para ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
       margin: 0;
@@ -15,51 +18,78 @@
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: #ffffff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 150px;
+      min-height: 100vh;
+      padding-top: 100px;
       text-align: center;
-      overflow-x: hidden;
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 30px 0;
+      background: rgba(0, 0, 0, 0.85);
       box-shadow: 0 0 20px #00f0ff;
       z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #e0f7fa;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00ffff;
     }
 
     h1 {
-      font-size: 3rem;
-      color: #00f0ff;
-      text-shadow: 0 0 15px #00f0ff;
-      font-weight: bold;
+      font-size: 2.5rem;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 600px;
-      margin: 30px 0;
+      margin: 20px auto;
       line-height: 1.6;
-      color: #e0f7fa;
+      color: #e0e0e0;
     }
 
     .whatsapp-button {
       background: #00e676;
       color: #000;
       padding: 15px 35px;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       border: none;
       border-radius: 50px;
       text-decoration: none;
       box-shadow: 0 0 25px #00e676;
       transition: all 0.3s ease;
       font-weight: bold;
+      margin-top: 20px;
     }
 
     .whatsapp-button:hover {
@@ -69,9 +99,8 @@
     }
 
     .footer {
-      margin-top: auto;
-      padding: 20px;
-      font-size: 1rem;
+      margin-top: 40px;
+      font-size: 0.9rem;
       color: #ccc;
       font-style: italic;
       letter-spacing: 1px;
@@ -79,20 +108,33 @@
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Hiper-Sorte</h1>
+    <div class="logo">🎯 Hiper-Sorte</div>
+    <nav>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="#"><i class="fas fa-ticket-alt"></i> Sorteios</a></li>
+        <li><a href="#"><i class="fas fa-user-check"></i> Participar</a></li>
+        <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="#"><i class="fas fa-info-circle"></i> Sobre</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <p>
-    Envie a mensagem <strong>"sorte"</strong> no WhatsApp,<br>
-    faça o pagamento via <strong>Pix</strong> e receba seu <strong>ID da sorte</strong> exclusivo!<br><br>
-    <em>O ID será gerado somente após o envio da palavra <strong>"sorte"</strong>.</em>
-  </p>
+  <main>
+    <h1>Hiper-Sorte</h1>
+    <p>
+      Envie a mensagem <strong>"sorte"</strong> no WhatsApp,<br>
+      faça o pagamento via <strong>Pix</strong> e receba seu <strong>ID da sorte</strong> exclusivo!<br><br>
+      <em>O ID será gerado somente após o envio da palavra <strong>"sorte"</strong>.</em>
+    </p>
 
-  <a class="whatsapp-button" href="https://wa.me/5555996043937?text=sorte" target="_blank">
-    Participar via WhatsApp
-  </a>
+    <a class="whatsapp-button" href="https://wa.me/5555996043937?text=sorte" target="_blank">
+      Participar via WhatsApp
+    </a>
 
-  <div class="footer">🎁 Prêmio: R$200,00 | Ticket: R$10,00</div>
+    <div class="footer">🎁 Prêmio: R$200,00 | Ticket: R$10,00</div>
+  </main>
 </body>
 </html>
