@@ -1,68 +1,83 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hiper-Sorte</title>
   <style>
-    body {
-      background-color: #000814;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
-    }h1 {
-  color: gold;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
+      padding: 20px;
+    }
 
-p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 90%;
-}
+    h1 {
+      font-size: 3rem;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+      margin-bottom: 20px;
+    }
 
-.whatsapp-button {
-  background-color: #00c853;
-  color: white;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 0 20px #00c853;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
 
-.whatsapp-button:hover {
-  background-color: #00e676;
-  transform: scale(1.05);
-}
+    .whatsapp-button {
+      background: #00e676;
+      color: #000;
+      padding: 15px 35px;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 25px #00e676;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
 
-.footer {
-  position: absolute;
-  bottom: 20px;
-  font-size: 0.9rem;
-  color: #bbb;
-}
+    .whatsapp-button:hover {
+      background: #00ff88;
+      transform: scale(1.05);
+      box-shadow: 0 0 35px #00ff88;
+    }
 
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 1rem;
+      color: #ccc;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
   <h1>Hiper-Sorte</h1>
   <p>
-    Envie a mensagem <strong>(sorte)</strong>, faça o pagamento via Pix e receba seu <strong>ID da sorte</strong> exclusivo!<br>
-    Lembre-se: o ID só será gerado após o envio da palavra sorte.
+    Envie a mensagem <strong>"sorte"</strong> no WhatsApp,<br>
+    faça o pagamento via <strong>Pix</strong> e receba seu <strong>ID da sorte</strong> exclusivo!<br><br>
+    <em>O ID será gerado somente após o envio da palavra <strong>"sorte"</strong>.</em>
   </p>
   <a class="whatsapp-button" href="https://wa.me/5555996043937?text=sorte" target="_blank">
-    Enviar mensagem no WhatsApp
+    Participar via WhatsApp
   </a>
-  <div class="footer">Valor do sorteio: R$200,00</div>
+  <div class="footer">🎁 Prêmio: R$200,00 | Ticket: R$10,00</div>
 </body>
 </html>
