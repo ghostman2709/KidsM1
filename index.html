@@ -1,200 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Hiper-Sorte</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hiper-Sorte – R$200</title>
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #001122, #002244);
-      color: #99ccff;
-      line-height: 1.6;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: gold;
       text-align: center;
-      padding: 30px 15px;
-      scroll-behavior: smooth;
     }
 
     h1 {
-      font-size: 2.5rem;
-      color: #66ccff;
-      margin: 20px 0 10px;
-      text-shadow: 0 0 12px #3399ffcc;
-      font-weight: 700;
+      font-size: 3em;
+      margin-top: 20px;
+      color: gold;
+      text-shadow: 0 0 10px gold, 0 0 20px #ffcc00, 0 0 30px #ffaa00;
     }
 
-    h2 {
-      color: #66ccff;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      text-shadow: 0 0 5px #3399ff;
-      font-weight: 700;
-    }
-
-    #countdown {
-      font-size: 1.5rem;
-      color: #ff66cc;
-      margin: 15px 0 30px;
-      text-shadow: 0 0 8px #ff66ccaa;
-    }
-
-    #codeDisplay {
-      font-size: 2rem;
-      margin: 20px auto;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffffbb;
-      max-width: 300px;
-      padding: 10px;
-      border: 2px solid #66ccff;
-      border-radius: 12px;
-      background: rgba(0, 17, 34, 0.5);
-      box-shadow: 0 0 20px #66ccff88;
-      user-select: none;
+    .contador {
+      font-size: 2em;
+      margin: 10px 0 30px;
+      color: #ffffff;
+      text-shadow: 0 0 10px cyan;
     }
 
     button {
+      font-size: 1.5em;
       padding: 15px 30px;
-      font-size: 1.2rem;
-      background: rgba(102, 204, 255, 0.1);
-      color: #66ccff;
-      border: 2px solid #66ccff;
-      border-radius: 12px;
+      margin: 20px auto;
+      background: #00f0ff;
+      border: none;
+      color: #000;
+      border-radius: 10px;
       cursor: pointer;
-      font-weight: 700;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px #66ccffaa;
-      margin-bottom: 30px;
-      user-select: none;
+      box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+      transition: transform 0.2s;
     }
 
     button:hover {
-      background: #66ccff;
-      color: #001122;
-      box-shadow: 0 0 25px #66ccffdd;
-      transform: scale(1.05);
+      transform: scale(1.1);
+      background: #00ffff;
     }
 
-    a.cta-button {
+    .codigo {
+      font-size: 2.5em;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      margin-top: 20px;
+    }
+
+    .whatsapp-link {
       display: inline-block;
-      padding: 14px 25px;
-      background: rgba(102, 204, 255, 0.1);
-      color: #66ccff;
-      border: 2px solid #66ccff;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1.2rem;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #25D366;
+      color: white;
+      font-size: 1.2em;
       text-decoration: none;
-      box-shadow: 0 0 15px #66ccffaa;
-      transition: all 0.3s ease;
-      user-select: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #25D366;
     }
 
-    a.cta-button:hover {
-      background: #66ccff;
-      color: #001122;
-      box-shadow: 0 0 25px #66ccffdd;
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #88aabb;
-      text-shadow: 0 0 5px #3399ff88;
-      user-select: none;
-    }
-
-    /* Fade-in animation */
-    .fade-in-element {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-in-element.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      #codeDisplay {
-        font-size: 1.5rem;
-        max-width: 90%;
-      }
-      button, a.cta-button {
-        font-size: 1rem;
-        padding: 12px 20px;
-      }
+    .whatsapp-link:hover {
+      background: #1ebe5d;
     }
   </style>
 </head>
 <body>
-  <header class="fade-in-element">
-    <h1>Hiper-Sorte</h1>
-    <h2>Sorteio de R$200 - válido por 24 horas!</h2>
-  </header>
 
-  <main class="fade-in-element">
-    <button onclick="gerarCodigo()">Gerar Código da Sorte</button>
-    <div id="codeDisplay">Clique no botão acima para gerar seu código</div>
-    <div id="countdown"></div>
-    <a href="https://wa.me/5555996043937?text=sorte%20-%20hiperfoco" target="_blank" class="cta-button">
-      Fale conosco pelo WhatsApp
-    </a>
-  </main>
+  <h1>Hiper-Sorte – R$200</h1>
 
-  <footer class="fade-in-element">
-    Hiper-Sorte &copy; 2025 – Sorteios confiáveis para você.
-  </footer>
+  <div class="contador" id="contador"></div>
+
+  <button onclick="gerarCodigo()">🎲 Gerar Código da Sorte</button>
+
+  <div class="codigo" id="codigo"></div>
+
+  <a class="whatsapp-link" id="whatsappLink" href="#" target="_blank">
+    Enviar para o WhatsApp
+  </a>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const fadeEls = document.querySelectorAll('.fade-in-element');
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      fadeEls.forEach(el => observer.observe(el));
-
-      // Contagem regressiva 24h
-      const deadline = new Date().getTime() + 24*60*60*1000;
-      const countdownEl = document.getElementById('countdown');
-      const interval = setInterval(() => {
-        const now = new Date().getTime();
-        const dist = deadline - now;
-        if(dist > 0){
-          const h = Math.floor((dist % (1000*60*60*24)) / (1000*60*60));
-          const m = Math.floor((dist % (1000*60*60)) / (1000*60));
-          const s = Math.floor((dist % (1000*60)) / 1000);
-          countdownEl.textContent = `Tempo restante: ${h}h ${m}m ${s}s`;
-        } else {
-          countdownEl.textContent = 'Sorteio encerrado!';
-          clearInterval(interval);
-        }
-      }, 1000);
-    });
-
     function gerarCodigo() {
       const numero = Math.floor(Math.random() * 1000) + 1;
-      const codigo = 'HS-' + numero.toString().padStart(4, '0');
-      document.getElementById('codeDisplay').textContent = 'Seu código é: ' + codigo;
+      const codigo = "HS-" + numero.toString().padStart(4, '0');
+      document.getElementById("codigo").innerText = codigo;
+
+      const link = `https://wa.me/5555996043937?text=sorte%20-%20hiperfoco%20%7C%20${codigo}`;
+      document.getElementById("whatsappLink").href = link;
     }
+
+    function iniciarContagemRegressiva() {
+      const duracao = 24 * 60 * 60 * 1000; // 24 horas em milissegundos
+      const agora = new Date().getTime();
+      const fim = agora + duracao;
+
+      const intervalo = setInterval(() => {
+        const agora = new Date().getTime();
+        const distancia = fim - agora;
+
+        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+        document.getElementById("contador").innerText =
+          `Termina em ${horas}h ${minutos}m ${segundos}s`;
+
+        if (distancia < 0) {
+          clearInterval(intervalo);
+          document.getElementById("contador").innerText = "Sorteio encerrado!";
+        }
+      }, 1000);
+    }
+
+    iniciarContagemRegressiva();
   </script>
+
 </body>
 </html>
