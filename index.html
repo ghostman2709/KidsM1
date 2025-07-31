@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sorteio Hyper Foco - R$100</title>
+  <title>Hiper-Sorte - R$100</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -74,7 +74,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>SORTEIO HYPER FOCO</h1>
+    <h1>HIPER-SORTE</h1>
     <h2>💰 R$100 via Pix em 24h</h2>
 
     <p><strong>⏳ Válido por tempo limitado!</strong></p>
@@ -103,8 +103,8 @@
 
   <script>
     function gerarCodigo() {
-      const num = Math.floor(Math.random() * 900000 + 100000);
-      const codigo = 'HF-' + num;
+      const num = Math.floor(Math.random() * 1000) + 1;
+      const codigo = 'HF-' + String(num).padStart(3, '0');
       document.getElementById('codigo-sorte').innerText = 'Seu código: ' + codigo;
     }
   </script>
