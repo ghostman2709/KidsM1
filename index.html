@@ -13,30 +13,40 @@
 
     body {
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #fff;
+      color: #ffffff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      padding-top: 150px;
       text-align: center;
-      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px 0;
+      box-shadow: 0 0 20px #00f0ff;
+      z-index: 1000;
     }
 
     h1 {
       font-size: 3rem;
-      color: #FFD700;
-      text-shadow: 0 0 10px #FFD700;
-      margin-bottom: 20px;
+      color: #00f0ff;
+      text-shadow: 0 0 15px #00f0ff;
+      font-weight: bold;
     }
 
     p {
       font-size: 1.2rem;
       max-width: 600px;
-      margin-bottom: 40px;
+      margin: 30px 0;
       line-height: 1.6;
-      color: #e0e0e0;
+      color: #e0f7fa;
     }
 
     .whatsapp-button {
@@ -59,8 +69,8 @@
     }
 
     .footer {
-      position: absolute;
-      bottom: 20px;
+      margin-top: auto;
+      padding: 20px;
       font-size: 1rem;
       color: #ccc;
       font-style: italic;
@@ -69,15 +79,20 @@
   </style>
 </head>
 <body>
-  <h1>Hiper-Sorte</h1>
+  <header>
+    <h1>Hiper-Sorte</h1>
+  </header>
+
   <p>
     Envie a mensagem <strong>"sorte"</strong> no WhatsApp,<br>
     faça o pagamento via <strong>Pix</strong> e receba seu <strong>ID da sorte</strong> exclusivo!<br><br>
     <em>O ID será gerado somente após o envio da palavra <strong>"sorte"</strong>.</em>
   </p>
+
   <a class="whatsapp-button" href="https://wa.me/5555996043937?text=sorte" target="_blank">
     Participar via WhatsApp
   </a>
+
   <div class="footer">🎁 Prêmio: R$200,00 | Ticket: R$10,00</div>
 </body>
 </html>
