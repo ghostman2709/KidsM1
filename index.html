@@ -1,80 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hiper-Sorte</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<meta charset="UTF-8">
+<title>Hyper Foco · Backup</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #0b0b0b;
+        color: #eaeaea;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
-    body {
-      background-color: #000000;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding: 20px;
-      animation: fadeIn 1.2s ease-in-out;
-      text-align: center;
+    .card {
+        background: #111;
+        border: 1px solid #222;
+        border-radius: 14px;
+        padding: 30px 40px;
+        width: 420px;
+        box-shadow: 0 0 40px rgba(0,0,0,.8);
     }
 
     h1 {
-      font-size: 2em;
-      color: #00bfff;
-      text-shadow: 0 0 8px #00bfff, 0 0 12px #00bfff;
-      margin-bottom: 30px;
+        margin: 0 0 20px;
+        font-size: 22px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #ffffff;
     }
 
-    p {
-      font-size: 1em;
-      line-height: 1.6;
-      margin-bottom: 10px;
+    .line {
+        margin-bottom: 14px;
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #1d1d1d;
+        padding-bottom: 6px;
     }
 
-    a {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 24px;
-      background: #00bfff;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      box-shadow: 0 0 12px #00bfff;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .label {
+        color: #888;
     }
 
-    a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 16px #00bfff, 0 0 24px #00bfff;
+    .value {
+        font-weight: 600;
+        color: #fff;
     }
 
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .status-ok {
+        color: #00ff9c;
     }
-  </style>
+
+    .status-fail {
+        color: #ff4d4d;
+    }
+
+    footer {
+        margin-top: 25px;
+        font-size: 12px;
+        color: #555;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+</style>
 </head>
+
 <body>
-  <h1>🎉 Hiper-Sorte R$200</h1>
-  <p>Envie a palavra <strong>"sorte"</strong> no WhatsApp</p>
-  <p>Faça o pagamento via <strong>Pix</strong></p>
-  <p>Receba seu <strong>ID da sorte</strong> exclusivo</p>
-  <p><em>*O ID será gerado automaticamente após a confirmação do pagamento.*</em></p>
-  <a href="https://wa.me/5555996043937?text=sorte">Participar via WhatsApp</a>
-  <p style="margin-top: 30px;">🎁 <strong>Prêmio:</strong> R$200,00   |   <strong>Ticket:</strong> R$10,00</p>
+
+<div class="card">
+    <h1>Hyper Foco Backup</h1>
+
+    <div class="line">
+        <span class="label">Último Backup</span>
+        <span class="value" id="ultimo">--</span>
+    </div>
+
+    <div class="line">
+        <span class="label">Tamanho</span>
+        <span class="value" id="tamanho">--</span>
+    </div>
+
+    <div class="line">
+        <span class="label">Servidor</span>
+        <span class="value" id="servidor">--</span>
+    </div>
+
+    <div class="line">
+        <span class="label">Pasta</span>
+        <span class="value" id="pasta">--</span>
+    </div>
+
+    <div class="line">
+        <span class="label">Status</span>
+        <span class="value" id="status">--</span>
+    </div>
+
+    <footer>
+        Hyper Foco · Backup automático diário
+    </footer>
+</div>
+
+<script>
+fetch("status.json")
+.then(r => r.json())
+.then(data => {
+    document.getElementById("ultimo").innerText = data.ultimo_backup;
+    document.getElementById("tamanho").innerText = data.tamanho;
+    document.getElementById("servidor").innerText = data.servidor;
+    document.getElementById("pasta").innerText = data.pasta;
+
+    const status = document.getElementById("status");
+    status.innerText = data.status;
+
+    status.classList.add(
+        data.status === "OK" ? "status-ok" : "status-fail"
+    );
+})
+.catch(() => {
+    document.getElementById("status").innerText = "ERRO";
+    document.getElementById("status").classList.add("status-fail");
+});
+</script>
+
 </body>
 </html>
