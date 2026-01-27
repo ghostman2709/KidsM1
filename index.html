@@ -1,162 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>HyperFoco • Drive Checker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Drive Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonte futurista -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background: radial-gradient(circle at top, #04121f, #000000);
-      font-family: 'Orbitron', sans-serif;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+body{
+  margin:0;
+  background:#000;
+  color:#0ff;
+  font-family:'Orbitron',sans-serif;
+}
 
-    .container {
-      width: 100%;
-      max-width: 520px;
-      padding: 40px;
-      border-radius: 20px;
-      background: rgba(5, 15, 30, 0.92);
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.25);
-      text-align: center;
-    }
+.wrapper{
+  padding:20px;
+}
 
-    h1 {
-      margin: 0 0 10px;
-      font-size: 30px;
-      color: #00f0ff;
-      text-shadow: 0 0 14px rgba(0, 240, 255, 0.9);
-    }
+input{
+  width:100%;
+  padding:14px;
+  background:#050b12;
+  border:1px solid #00f0ff;
+  color:#00f0ff;
+  outline:none;
+  font-size:14px;
+}
 
-    p {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-bottom: 30px;
-    }
+button{
+  width:100%;
+  padding:14px;
+  margin-top:10px;
+  background:#00f0ff;
+  color:#000;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 0 15px #00f0ff;
+}
 
-    input {
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      border: none;
-      outline: none;
-      background: #020b16;
-      color: #00f0ff;
-      font-size: 14px;
-      box-shadow: inset 0 0 12px rgba(0,255,255,0.25);
-      margin-bottom: 20px;
-    }
+button:hover{
+  background:#00c8ff;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      border: none;
-      font-weight: 800;
-      font-size: 15px;
-      cursor: pointer;
-      background: linear-gradient(90deg, #00f0ff, #0077ff);
-      color: #000;
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
-      transition: transform 0.2s ease;
-    }
+#viewer{
+  margin-top:20px;
+  width:100%;
+  height:75vh;
+  border:1px solid #00f0ff;
+  box-shadow:0 0 25px rgba(0,255,255,.3);
+  display:none;
+}
 
-    button:hover {
-      transform: scale(1.03);
-    }
-
-    .result {
-      margin-top: 25px;
-      padding: 16px;
-      border-radius: 14px;
-      font-size: 14px;
-      display: none;
-    }
-
-    .success {
-      background: rgba(0, 255, 180, 0.12);
-      color: #00ffb4;
-      box-shadow: 0 0 14px rgba(0,255,180,0.45);
-    }
-
-    .error {
-      background: rgba(255, 0, 80, 0.12);
-      color: #ff4d6d;
-      box-shadow: 0 0 14px rgba(255,0,80,0.45);
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 11px;
-      opacity: 0.45;
-    }
-  </style>
+.msg{
+  margin-top:15px;
+  color:#ff4d6d;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>HyperFoco</h1>
-    <p>Verificador de pasta compartilhada do Google Drive</p>
+<div class="wrapper">
 
-    <input
-      id="link"
-      placeholder="Cole o link da pasta do Google Drive"
-      value="https://drive.google.com/drive/folders/19QolU4GRQ9ebv77dBYVOdojiBuNkWGZs"
-    />
+  <input id="link" value="https://drive.google.com/drive/folders/19QolU4GRQ9ebv77dBYVOdojiBuNkWGZs">
+  <button onclick="loadFolder()">CARREGAR PASTA</button>
 
-    <button onclick="checkDrive()">VERIFICAR PASTA</button>
+  <div id="msg" class="msg"></div>
 
-    <div id="result" class="result"></div>
+  <iframe id="viewer"></iframe>
 
-    <footer>Mendieta.Cloud • Cyber Security</footer>
-  </div>
+</div>
 
-  <script>
-    function extractFolderId(url) {
-      const match = url.match(/folders\\/([a-zA-Z0-9_-]+)/);
-      return match ? match[1] : null;
-    }
+<script>
+function loadFolder(){
+  const link = document.getElementById('link').value.trim();
+  const msg = document.getElementById('msg');
+  const viewer = document.getElementById('viewer');
 
-    function checkDrive() {
-      const link = document.getElementById('link').value.trim();
-      const result = document.getElementById('result');
-      result.style.display = 'block';
+  const match = link.match(/folders\/([a-zA-Z0-9_-]+)/);
 
-      const folderId = extractFolderId(link);
+  if(!match){
+    msg.innerText = 'Link inválido';
+    viewer.style.display = 'none';
+    return;
+  }
 
-      if (!folderId) {
-        result.className = 'result error';
-        result.innerHTML = '❌ Link inválido.<br>Use um link de pasta do Google Drive.';
-        return;
-      }
+  const folderId = match[1];
 
-      // IMPORTANTE:
-      // Frontend puro NÃO consegue confirmar permissões reais do Google Drive
-      result.className = 'result success';
-      result.innerHTML = `
-        ✔️ Link de pasta válido<br>
-        <small>ID da pasta:</small><br>
-        <b>${folderId}</b><br><br>
-        ⚠️ Se a pasta estiver como
-        <i>\"Qualquer pessoa com o link\"</i>,
-        ela será acessível publicamente.
-      `;
-    }
-  </script>
+  const embedUrl = `https://drive.google.com/embeddedfolderview?id=${folderId}#grid`;
+
+  viewer.src = embedUrl;
+  viewer.style.display = 'block';
+  msg.innerText = '';
+}
+</script>
 
 </body>
 </html>
