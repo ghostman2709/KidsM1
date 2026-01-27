@@ -1,158 +1,162 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mendieta.Cloud · Backup</title>
+  <meta charset="UTF-8">
+  <title>HyperFoco • Drive Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+  <!-- Fonte futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
     * {
-        box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     body {
-        margin: 0;
-        background: #050505;
-        color: #eaeaea;
-        font-family: "Segoe UI", Roboto, Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 20px;
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #04121f, #000000);
+      font-family: 'Orbitron', sans-serif;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .card {
-        background: #0d0d0d;
-        border: 1px solid #1a1a1a;
-        border-radius: 18px;
-        padding: 28px;
-        width: 100%;
-        max-width: 420px;
-        box-shadow: 0 0 50px rgba(0,0,0,.9);
+    .container {
+      width: 100%;
+      max-width: 520px;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(5, 15, 30, 0.92);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.25);
+      text-align: center;
     }
 
     h1 {
-        margin: 0 0 22px;
-        font-size: 20px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #ffffff;
-        text-align: center;
+      margin: 0 0 10px;
+      font-size: 30px;
+      color: #00f0ff;
+      text-shadow: 0 0 14px rgba(0, 240, 255, 0.9);
     }
 
-    .line {
-        margin-bottom: 14px;
-        font-size: 14px;
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        border-bottom: 1px solid #1c1c1c;
-        padding-bottom: 8px;
-        flex-wrap: wrap;
+    p {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 30px;
     }
 
-    .label {
-        color: #777;
-        min-width: 110px;
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      background: #020b16;
+      color: #00f0ff;
+      font-size: 14px;
+      box-shadow: inset 0 0 12px rgba(0,255,255,0.25);
+      margin-bottom: 20px;
     }
 
-    .value {
-        font-weight: 600;
-        color: #fff;
-        text-align: right;
-        word-break: break-all;
-        flex: 1;
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #00f0ff, #0077ff);
+      color: #000;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
+      transition: transform 0.2s ease;
     }
 
-    .status-ok {
-        color: #00ff9c;
+    button:hover {
+      transform: scale(1.03);
     }
 
-    .status-fail {
-        color: #ff4d4d;
+    .result {
+      margin-top: 25px;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .success {
+      background: rgba(0, 255, 180, 0.12);
+      color: #00ffb4;
+      box-shadow: 0 0 14px rgba(0,255,180,0.45);
+    }
+
+    .error {
+      background: rgba(255, 0, 80, 0.12);
+      color: #ff4d6d;
+      box-shadow: 0 0 14px rgba(255,0,80,0.45);
     }
 
     footer {
-        margin-top: 20px;
-        font-size: 11px;
-        color: #555;
-        text-align: center;
-        letter-spacing: 1px;
+      margin-top: 30px;
+      font-size: 11px;
+      opacity: 0.45;
     }
-
-    @media (max-width: 380px) {
-        h1 {
-            font-size: 18px;
-        }
-        .label {
-            min-width: 90px;
-            font-size: 13px;
-        }
-        .value {
-            font-size: 13px;
-        }
-    }
-</style>
+  </style>
 </head>
 
 <body>
 
-<div class="card">
-    <h1>Mendieta.Cloud</h1>
+  <div class="container">
+    <h1>HyperFoco</h1>
+    <p>Verificador de pasta compartilhada do Google Drive</p>
 
-    <div class="line">
-        <span class="label">Último Backup</span>
-        <span class="value" id="ultimo">--</span>
-    </div>
+    <input
+      id="link"
+      placeholder="Cole o link da pasta do Google Drive"
+      value="https://drive.google.com/drive/folders/19QolU4GRQ9ebv77dBYVOdojiBuNkWGZs"
+    />
 
-    <div class="line">
-        <span class="label">Tamanho</span>
-        <span class="value" id="tamanho">--</span>
-    </div>
+    <button onclick="checkDrive()">VERIFICAR PASTA</button>
 
-    <div class="line">
-        <span class="label">Servidor</span>
-        <span class="value" id="servidor">--</span>
-    </div>
+    <div id="result" class="result"></div>
 
-    <div class="line">
-        <span class="label">Pasta</span>
-        <span class="value" id="pasta">--</span>
-    </div>
+    <footer>Mendieta.Cloud • Cyber Security</footer>
+  </div>
 
-    <div class="line">
-        <span class="label">Status</span>
-        <span class="value" id="status">--</span>
-    </div>
+  <script>
+    function extractFolderId(url) {
+      const match = url.match(/folders\\/([a-zA-Z0-9_-]+)/);
+      return match ? match[1] : null;
+    }
 
-    <footer>
-        Backup automático · Mendieta.Cloud
-    </footer>
-</div>
+    function checkDrive() {
+      const link = document.getElementById('link').value.trim();
+      const result = document.getElementById('result');
+      result.style.display = 'block';
 
-<script>
-fetch("status.json")
-.then(r => r.json())
-.then(data => {
-    document.getElementById("ultimo").innerText = data.ultimo_backup;
-    document.getElementById("tamanho").innerText = data.tamanho;
-    document.getElementById("servidor").innerText = data.servidor;
-    document.getElementById("pasta").innerText = data.pasta;
+      const folderId = extractFolderId(link);
 
-    const status = document.getElementById("status");
-    status.innerText = data.status;
+      if (!folderId) {
+        result.className = 'result error';
+        result.innerHTML = '❌ Link inválido.<br>Use um link de pasta do Google Drive.';
+        return;
+      }
 
-    status.classList.add(
-        data.status === "OK" ? "status-ok" : "status-fail"
-    );
-})
-.catch(() => {
-    const status = document.getElementById("status");
-    status.innerText = "ERRO";
-    status.classList.add("status-fail");
-});
-</script>
+      // IMPORTANTE:
+      // Frontend puro NÃO consegue confirmar permissões reais do Google Drive
+      result.className = 'result success';
+      result.innerHTML = `
+        ✔️ Link de pasta válido<br>
+        <small>ID da pasta:</small><br>
+        <b>${folderId}</b><br><br>
+        ⚠️ Se a pasta estiver como
+        <i>\"Qualquer pessoa com o link\"</i>,
+        ela será acessível publicamente.
+      `;
+    }
+  </script>
 
 </body>
 </html>
