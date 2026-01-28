@@ -2,103 +2,127 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Drive Viewer</title>
+<title>Mendieta.Cloud – Cloud & Cyber Security Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  background:#000;
-  color:#0ff;
-  font-family:'Orbitron',sans-serif;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0b0f14;
+    color: #e6e6e6;
 }
 
-.wrapper{
-  padding:20px;
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-input{
-  width:100%;
-  padding:14px;
-  background:#050b12;
-  border:1px solid #00f0ff;
-  color:#00f0ff;
-  outline:none;
-  font-size:14px;
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #00bfff;
 }
 
-button{
-  width:100%;
-  padding:14px;
-  margin-top:10px;
-  background:#00f0ff;
-  color:#000;
-  font-weight:600;
-  border:none;
-  cursor:pointer;
-  box-shadow:0 0 15px #00f0ff;
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 40px;
+    color: #9fbad0;
 }
 
-button:hover{
-  background:#00c8ff;
+section {
+    margin-bottom: 50px;
 }
 
-#viewer{
-  margin-top:20px;
-  width:100%;
-  height:75vh;
-  border:1px solid #00f0ff;
-  box-shadow:0 0 25px rgba(0,255,255,.3);
-  display:none;
+.section-title {
+    font-size: 22px;
+    color: #00bfff;
+    margin-bottom: 15px;
 }
 
-.msg{
-  margin-top:15px;
-  color:#ff4d6d;
+p {
+    line-height: 1.7;
+    color: #cfd8e3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 6px 0;
+}
+
+footer {
+    border-top: 1px solid #1f2a36;
+    padding: 20px;
+    text-align: center;
+    color: #6b7c8f;
+    font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-  <input id="link" value="https://drive.google.com/drive/folders/19QolU4GRQ9ebv77dBYVOdojiBuNkWGZs">
-  <button onclick="loadFolder()">CARREGAR PASTA</button>
+    <h1>Mendieta.Cloud</h1>
+    <h2>Cloud & Cyber Security Solutions</h2>
 
-  <div id="msg" class="msg"></div>
+    <section>
+        <p>
+            Soluções em Cloud e Cyber Security para proteção de dados, servidores
+            e infraestrutura digital.
+        </p>
+    </section>
 
-  <iframe id="viewer"></iframe>
+    <section>
+        <div class="section-title">☁️ Cloud & VPS</div>
+        <ul>
+            <li>Gerenciamento de servidores Linux e Windows</li>
+            <li>Configuração segura de VPS</li>
+            <li>Atualizações e hardening do sistema</li>
+            <li>Controle de acesso e permissões</li>
+        </ul>
+    </section>
+
+    <section>
+        <div class="section-title">🛡️ Cyber Security</div>
+        <ul>
+            <li>Firewall e proteção contra invasões</li>
+            <li>Bloqueio de ataques e tentativas suspeitas</li>
+            <li>Monitoramento básico de segurança</li>
+        </ul>
+    </section>
+
+    <section>
+        <div class="section-title">💾 Backup & Recuperação</div>
+        <ul>
+            <li>Backups automáticos</li>
+            <li>Dados criptografados</li>
+            <li>Cópias locais e remotas</li>
+            <li>Recuperação rápida em caso de falha</li>
+        </ul>
+    </section>
+
+    <section>
+        <div class="section-title">🔑 Acesso Seguro</div>
+        <ul>
+            <li>VPN privada (WireGuard)</li>
+            <li>Acesso remoto protegido</li>
+            <li>Menor exposição à internet</li>
+        </ul>
+    </section>
 
 </div>
 
-<script>
-function loadFolder(){
-  const link = document.getElementById('link').value.trim();
-  const msg = document.getElementById('msg');
-  const viewer = document.getElementById('viewer');
-
-  const match = link.match(/folders\/([a-zA-Z0-9_-]+)/);
-
-  if(!match){
-    msg.innerText = 'Link inválido';
-    viewer.style.display = 'none';
-    return;
-  }
-
-  const folderId = match[1];
-
-  const embedUrl = `https://drive.google.com/embeddedfolderview?id=${folderId}#grid`;
-
-  viewer.src = embedUrl;
-  viewer.style.display = 'block';
-  msg.innerText = '';
-}
-</script>
+<footer>
+    Mendieta.Cloud © 2026 – Cloud & Cyber Security Solutions
+</footer>
 
 </body>
 </html>
